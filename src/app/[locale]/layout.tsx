@@ -7,6 +7,8 @@ import { AuthGate } from
   '@/components/providers/AuthGate';
 import { Navbar } from '@/components/organisms/Navbar';
 import { Footer } from '@/components/organisms/Footer';
+import { AdvancedOnly } from '@/components/organisms/guide/AdvancedOnly';
+import { GuideLayer } from '@/components/organisms/guide/GuideLayer';
 import { LinkAdapter } from
   '@/components/providers/LinkAdapter';
 import { HtmlLang } from '@/components/atoms/HtmlLang';
@@ -80,7 +82,7 @@ export default async function LocaleLayout({
                   flexDirection: 'column',
                   minHeight: 0, overflow: 'auto',
                 }}>
-                  <WelcomeBanner />
+                  <AdvancedOnly><WelcomeBanner /></AdvancedOnly>
                   {children}
                 </Box>
               </Box>
@@ -90,6 +92,7 @@ export default async function LocaleLayout({
         </AppShell>
         {process.env.NEXT_PUBLIC_DEBUG_BAR
           === '1' && <DebugBar />}
+        <GuideLayer />
         <ClientCookieBanner />
       </LinkAdapter>
     </IntlProvider>

@@ -1477,7 +1477,8 @@
             "heading": "4. Know where things are",
             "body": [
               "The menu (top left) groups everything: Plan (Planner, Dashboard, Milestones, Weekly review), Discover (Market research, Decisions, Scoping), Finance (Financials, Accounting), Execute (OKRs, KPIs, PDCA, Risks, Pivots) and Connect (Community, Resources, Profile). The dashboard shows your progress at a glance.",
-              "The business name next to the logo is the business you are working on. See Several businesses to add more."
+              "The business name next to the logo is the business you are working on. See Several businesses to add more.",
+              "Your home page shows one next step at a time. The menu is short on purpose: turn on Show advanced tools at the bottom of the menu to see everything."
             ]
           },
           {
@@ -1769,7 +1770,107 @@
             "body": [
               "Use the Contact page in the footer."
             ]
+          },
+          {
+            "heading": "Where did most of the menu go?",
+            "body": [
+              "The menu starts short on purpose. Open the menu and turn on Show advanced tools to see everything, including the full dashboard."
+            ]
           }
+        ]
+      },
+      "sole-trader": {
+        "title": "Sole trader or limited company?",
+        "summary": "Why you can start without a company, and when to look into one.",
+        "sections": [
+          {
+            "heading": "The short answer",
+            "body": [
+              "You can start as a sole trader. You and the business are the same person in law, there is nothing to register with Companies House, and you are not required to have an accountant.",
+              "A limited company is worth looking at later, once income is steady. This is general information for the UK, not advice. Check gov.uk or ask a professional for your own case."
+            ]
+          },
+          {
+            "heading": "What a sole trader has to do",
+            "body": [
+              "Keep a simple record of money in and money out, with receipts. A spreadsheet is enough.",
+              "Tell HMRC and file a Self Assessment tax return if your trading income goes over £1,000 in a tax year. Under that amount the trading allowance may cover you. Check the current rules on gov.uk.",
+              "A separate bank account is not required but makes the records much easier."
+            ]
+          },
+          {
+            "heading": "Universal Credit",
+            "body": [
+              "Self-employed income affects Universal Credit. Tell your work coach before you start trading and report your earnings as they ask.",
+              "There are special rules for the first months of a new business. Ask your work coach what applies to you, because the rules change."
+            ]
+          },
+          {
+            "heading": "What a limited company adds",
+            "body": [
+              "A company is a separate legal body. That can limit what you personally owe, but it brings more admin: annual accounts, a Corporation Tax return, a confirmation statement and payroll if you pay yourself a salary. Most people pay an accountant to handle this.",
+              "The practical protection at the start is usually insurance, such as public liability, not a company."
+            ]
+          },
+          {
+            "heading": "When to look into a company",
+            "body": [
+              "Wait until all three are true: three months of steady income, you can afford an accountant every month, and customers or the work genuinely need a company. The home page has a card that tracks these."
+            ]
+          }
+        ],
+        "related": [
+          "low-risk-ideas",
+          "getting-started"
+        ]
+      },
+      "low-risk-ideas": {
+        "title": "Choosing a low-risk idea",
+        "summary": "Six questions to ask before you spend time or money on an idea.",
+        "sections": [
+          {
+            "heading": "Why risk matters more than size",
+            "body": [
+              "Most early money is lost to three things: work that never ends, getting paid late or not at all, and costs that grow with every customer. A small idea that avoids these beats a big one that does not.",
+              "No idea is guaranteed to earn money. The aim is to make it cheap and quick to find out."
+            ]
+          },
+          {
+            "heading": "The six questions",
+            "body": [
+              "1. Is the job the same size every time, with a written list of what is included?",
+              "2. Can you agree the price first and take payment or a deposit up front?",
+              "3. Does each job cost almost nothing besides your time, with no AI credits, materials or fees per customer?",
+              "4. Will the same customers pay again, for example monthly?",
+              "5. Can you start for under your budget and test it for a month?",
+              "6. Is it easy to say no, with no long revisions or demanding clients?",
+              "The home page has a card that scores your idea against these and tells you what to fix."
+            ]
+          },
+          {
+            "heading": "Scope creep",
+            "body": [
+              "Scope creep is when a customer keeps asking for a little more at the same price. Prevent it by writing down what is included, what is not, and how many changes are covered. Anything else is a priced extra. Custom website work is the classic example, so be careful with it."
+            ]
+          },
+          {
+            "heading": "AI credits",
+            "body": [
+              "If an AI does the work for each customer, your costs rise with every customer. Prefer ideas where you or a fixed checklist do the work and AI only helps you plan or write. Work out the cost of one job and put it in your price."
+            ]
+          },
+          {
+            "heading": "Build in private, then test",
+            "body": [
+              "It is fine to build the first version before you have any customers. Keep it private, cap what you spend, and write down what it will not do.",
+              "While you build, talk to a few people about the problem (you are listening, not selling). Building with no conversations at all is the usual way to lose weeks.",
+              "When it works end to end, tick the Ready for your first customer list on the home page, then aim for 3 paying customers."
+            ]
+          }
+        ],
+        "related": [
+          "sole-trader",
+          "roadmap"
         ]
       }
     },
@@ -1792,10 +1893,10 @@
       },
       "dashboard": {
         "alt": "The dashboard with the menu, business selector, points and avatar marked.",
-        "caption": "The dashboard after signing in.",
+        "caption": "The top bar, with the menu, business selector, points and avatar.",
         "legend": [
-          "Menu: opens the list of all pages.",
-          "Business selector: switch or create businesses.",
+          "Menu: opens the list of pages.",
+          "Business selector: pick which business you are planning and costing.",
           "Points and streak: reward for steady progress.",
           "Avatar: profile, settings and log out."
         ]
@@ -1889,7 +1990,209 @@
         "alt": "The avatar menu with Profile, Settings and Log out.",
         "caption": "The avatar menu.",
         "legend": []
+      },
+      "home": {
+        "alt": "The home page with the next step, readiness lists and idea check marked.",
+        "caption": "The home page.",
+        "legend": [
+          "Your next step. Do it, then press I have done this.",
+          "Ready for your first customer? Tick these before you take one.",
+          "Do I need a limited company? The answer is usually not yet.",
+          "Is my idea low risk? Six questions that show what to fix.",
+          "Help me: replays the tour or opens the help articles."
+        ]
       }
     }
+  },
+  "guide": {
+    "advancedLabel": "Show advanced tools",
+    "advancedHint": "Off keeps the menu short. Turn on for every tool and the full dashboard.",
+    "homeIntro": "One step at a time. Nothing here costs money or commits you to anything.",
+    "nextLabel": "Your next step",
+    "doThis": "Do this step",
+    "markDone": "I have done this",
+    "showMe": "Show me where to click",
+    "allDone": "You have finished the starter steps. Well done. Turn on advanced tools when you want more.",
+    "starterProgress": "{done} of {total} starter steps done",
+    "companyTitle": "Do I need a limited company?",
+    "companyBody": "Not yet. You can start as a sole trader: no company to register and no accountant required to begin. Wait until you know there is enough steady income to justify one.",
+    "companyChecksTitle": "Think about a company when all of these are true:",
+    "companyChecks": {
+      "steadyIncome": "I have had steady income for three months in a row.",
+      "accountant": "I can afford an accountant every month.",
+      "customerAsks": "Customers or the work itself need a company."
+    },
+    "companyNotYet": "Not yet. Keep going as you are.",
+    "companyReady": "You may be ready to look into it. Read the guide first.",
+    "companyLearn": "Read: sole trader or company?",
+    "ideaTitle": "Is my idea low risk?",
+    "ideaIntro": "Answer honestly. A no is useful: it tells you what to fix.",
+    "yes": "Yes",
+    "no": "No",
+    "ideaVerdict": {
+      "low": "Looks low risk. Test it with 3 customers first.",
+      "mostly": "Nearly there. Fix the points below before you start.",
+      "risky": "Risky as it stands. Change the idea using the points below."
+    },
+    "ideaReset": "Start again",
+    "ideaLearn": "Read: choosing a low-risk idea",
+    "idea": {
+      "fixedScope": {
+        "q": "Is the job the same size every time, with a written list of what is included?",
+        "why": "Open-ended work is where unpaid time disappears.",
+        "fix": "Write down exactly what is included and what is not, and refuse anything else or charge extra."
+      },
+      "upfront": {
+        "q": "Can you agree the price before you start, and take a deposit or payment up front?",
+        "why": "Being paid late, or not at all, is the biggest early risk.",
+        "fix": "Change the offer so a deposit or payment in advance is normal."
+      },
+      "noPerJobCost": {
+        "q": "Does each job cost you almost nothing besides your time (no AI credits, materials or fees per customer)?",
+        "why": "If costs rise with every customer, a busy month can lose you money.",
+        "fix": "Work out the cost of one job and add it to your price, or pick a version where AI only helps with planning."
+      },
+      "repeat": {
+        "q": "Will the same customers pay again, for example monthly?",
+        "why": "Finding customers is the hard part. Repeat income needs far fewer of them.",
+        "fix": "Look for a monthly or regular version of the same service."
+      },
+      "cheapStart": {
+        "q": "Can you start for under your budget (for example £500) and test it for a month?",
+        "why": "If a test is cheap you can afford to be wrong.",
+        "fix": "Cut the start-up list to the bare minimum and borrow or rent what you can."
+      },
+      "sayNo": {
+        "q": "Is it easy to say no, with no long revisions, deadlines or demanding clients?",
+        "why": "A single demanding customer can swallow a week.",
+        "fix": "Add a limit, such as two rounds of changes, and a price for extras."
+      }
+    },
+    "laterTitle": "Later: company, tax and accounting",
+    "laterBody": "These steps are hidden because you do not need them yet. Do them when you are sure the business will earn enough to be worth it.",
+    "laterShow": "Show them anyway",
+    "fabLabel": "Help me",
+    "fabAround": "Show me around",
+    "fabPage": "Walk me through this page",
+    "fabHelp": "Open the help articles",
+    "tourProgress": "Step {n} of {total}",
+    "tourNext": "Next",
+    "tourBack": "Back",
+    "tourSkip": "Skip",
+    "tourDone": "Done",
+    "tourGoThere": "Take me there",
+    "steps": {
+      "defineProblem": {
+        "how": "Write one sentence: who has this problem, and what does it cost them today? Open the Business Model Canvas and fill in only the Problem box.",
+        "cost": "Free · about 20 minutes"
+      },
+      "interviewCustomers": {
+        "how": "Ask 10 people who might pay: \"How do you handle this today? What does it cost you?\" Do not pitch. Listen, and write down what they say in the Discovery log.",
+        "cost": "Free · a few evenings"
+      },
+      "mapCompetitors": {
+        "how": "Find 3 other people already selling something similar. Note their price and what their customers complain about.",
+        "cost": "Free · about an hour"
+      },
+      "landingPageTest": {
+        "how": "Make a private first version that only you can see, a draft page or a simple mock-up, and check it works and says what you mean. Show it to one or two people you trust and ask what is unclear. You are not selling anything yet.",
+        "cost": "Free · about a week"
+      },
+      "onePagePlan": {
+        "how": "Fill in the rest of the canvas in plain words. One page, no jargon. It only has to make sense to you.",
+        "cost": "Free · about an hour"
+      },
+      "revenueModel": {
+        "how": "Decide exactly what you sell and for how much: one thing, one price, clear limits on what is included. Ask for payment before you start if you can.",
+        "cost": "Free · about 30 minutes"
+      },
+      "idealCustomer": {
+        "how": "Describe the one kind of person you will sell to first: who they are, where they are, and how you will reach them.",
+        "cost": "Free · about 30 minutes"
+      },
+      "financialProjections": {
+        "how": "Work out your running costs, your price, and how many customers cover your costs. Check that your start-up spend stays inside your budget.",
+        "cost": "Free · about an hour"
+      },
+      "launchChannel": {
+        "how": "Pick ONE way to reach customers, for example word of mouth, a local group or a flyer. Trying everything at once costs time and money.",
+        "cost": "Free · about 30 minutes"
+      },
+      "websiteAndMessaging": {
+        "how": "Write a short, clear description of what you do, who it is for and what it costs. A one-page sheet or a social post is plenty. Skip a full website for now.",
+        "cost": "Free · about an hour"
+      },
+      "firstTenCustomers": {
+        "how": "Only start when everything on the Ready for your first customer list is ticked. Begin with 3 customers, say no politely to anything outside what you agreed, and note what each one asked for.",
+        "cost": "Mostly your time"
+      },
+      "feedbackLoop": {
+        "how": "Ask each customer what was good and what was missing. Use the answers to adjust what you offer and what you charge.",
+        "cost": "Free · 10 minutes per customer"
+      },
+      "mvpScope": {
+        "how": "Write down the smallest version that does the job, and a list of what it will NOT do. This list stops the project growing while you build in private.",
+        "cost": "Free · about an hour"
+      },
+      "toolStack": {
+        "how": "Choose the cheapest tools you need to build it. Write down a monthly spending cap, including any AI credits, and stop when you reach it.",
+        "cost": "Set your cap first"
+      }
+    },
+    "tours": {
+      "welcome": {
+        "hello": {
+          "title": "Welcome. Let us show you around.",
+          "body": "Five quick steps. Nothing here costs money or commits you to anything. You can press Skip at any time."
+        },
+        "next": {
+          "title": "Your next step is always here",
+          "body": "One step at a time. Read it, press Do this step, and when you have done it press I have done this."
+        },
+        "company": {
+          "title": "You do not need a company yet",
+          "body": "Most people start as a sole trader. This card tells you when it is worth looking into a limited company."
+        },
+        "idea": {
+          "title": "Check an idea before you spend time on it",
+          "body": "Six yes or no questions that catch the usual traps, like never-ending work or costs that grow with every customer."
+        },
+        "fab": {
+          "title": "Stuck? Press this",
+          "body": "This button is on every page. It replays this tour, walks you through the page you are on, or opens the help articles."
+        }
+      },
+      "roadmap": {
+        "progress": {
+          "title": "This is your whole journey",
+          "body": "The bar counts every step in the roadmap. You only need the early ones to get started."
+        },
+        "step": {
+          "title": "This is your next step",
+          "body": "Do it, then tick this box. Your progress is saved."
+        },
+        "why": {
+          "title": "Not sure why? Press this",
+          "body": "It explains in plain words why the step matters."
+        },
+        "later": {
+          "title": "The rest can wait",
+          "body": "Company registration, tax set-up and accounting software are hidden until you need them. You can show them any time."
+        }
+      }
+    },
+    "launchTitle": "Ready for your first customer?",
+    "launchBody": "Build and test in private first. No customers until you can tick every box.",
+    "launchChecksTitle": "Tick these when they are true:",
+    "launchChecks": {
+      "worksEndToEnd": "I have tested it myself from start to finish and it works.",
+      "writtenScope": "I have written down what is included, what is not, and how many changes are covered.",
+      "paymentPlan": "I know my price and how and when I get paid.",
+      "costsCapped": "I know my running costs, including AI credits, and have set a cap.",
+      "incomeChecked": "I have asked my work coach how earnings affect my Universal Credit."
+    },
+    "launchNotYet": "Not yet. Keep building in private.",
+    "launchReady": "All ticked. You can take your first customer.",
+    "launchLearn": "Read: choosing a low-risk idea"
   }
 }

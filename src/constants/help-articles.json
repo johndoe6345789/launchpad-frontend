@@ -1,10 +1,72 @@
 [
-  { "slug": "getting-started", "related": ["roadmap", "plan-tools"] },
-  { "slug": "roadmap", "related": ["getting-started", "ai-help"] },
-  { "slug": "plan-tools", "related": ["roadmap", "businesses"] },
-  { "slug": "businesses", "related": ["plan-tools", "account"] },
-  { "slug": "accounting", "related": ["plan-tools", "faq"] },
-  { "slug": "ai-help", "related": ["roadmap", "faq"] },
-  { "slug": "account", "related": ["getting-started", "faq"] },
-  { "slug": "faq", "related": ["getting-started", "account"] }
+  {
+    "slug": "low-risk-ideas",
+    "related": [
+      "sole-trader",
+      "roadmap"
+    ]
+  },
+  {
+    "slug": "sole-trader",
+    "related": [
+      "low-risk-ideas",
+      "getting-started"
+    ]
+  },
+  {
+    "slug": "getting-started",
+    "related": [
+      "roadmap",
+      "plan-tools"
+    ]
+  },
+  {
+    "slug": "roadmap",
+    "related": [
+      "getting-started",
+      "ai-help"
+    ]
+  },
+  {
+    "slug": "plan-tools",
+    "related": [
+      "roadmap",
+      "businesses"
+    ]
+  },
+  {
+    "slug": "businesses",
+    "related": [
+      "plan-tools",
+      "account"
+    ]
+  },
+  {
+    "slug": "accounting",
+    "related": [
+      "plan-tools",
+      "faq"
+    ]
+  },
+  {
+    "slug": "ai-help",
+    "related": [
+      "roadmap",
+      "faq"
+    ]
+  },
+  {
+    "slug": "account",
+    "related": [
+      "getting-started",
+      "faq"
+    ]
+  },
+  {
+    "slug": "faq",
+    "related": [
+      "getting-started",
+      "account"
+    ]
+  }
 ]

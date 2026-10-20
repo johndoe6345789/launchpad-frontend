@@ -1,0 +1,23 @@
+{
+  "welcome": [
+    { "id": "hello", "path": "/dashboard" },
+    { "id": "next", "path": "/dashboard",
+      "target": "[data-tour=\"next-step\"]" },
+    { "id": "company", "path": "/dashboard",
+      "target": "[data-tour=\"company-gate\"]" },
+    { "id": "idea", "path": "/dashboard",
+      "target": "[data-tour=\"idea-check\"]" },
+    { "id": "fab", "path": "/dashboard",
+      "target": "[data-tour=\"guide-fab\"]" }
+  ],
+  "roadmap": [
+    { "id": "progress", "path": "/planner",
+      "target": "[data-tour=\"roadmap-progress\"]" },
+    { "id": "step", "path": "/planner",
+      "target": "#step-{nextStep}" },
+    { "id": "why", "path": "/planner",
+      "target": "[data-testid=\"expand-{nextStep}\"]" },
+    { "id": "later", "path": "/planner",
+      "target": "[data-tour=\"later-phases\"]" }
+  ]
+}

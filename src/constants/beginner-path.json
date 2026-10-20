@@ -1,0 +1,54 @@
+{
+  "laterPhases": [
+    "legal",
+    "finance"
+  ],
+  "simpleNav": [
+    "/dashboard",
+    "/planner",
+    "/market-research",
+    "/financials",
+    "/risk-assessment",
+    "/help"
+  ],
+  "stepRoutes": {
+    "defineProblem": "/market-research/canvas",
+    "interviewCustomers": "/market-research/discovery",
+    "mapCompetitors": "/market-research/competitors",
+    "landingPageTest": "/planner",
+    "onePagePlan": "/market-research/canvas",
+    "revenueModel": "/financials/revenue",
+    "idealCustomer": "/market-research/personas",
+    "financialProjections": "/financials/projections",
+    "launchChannel": "/launch",
+    "websiteAndMessaging": "/launch",
+    "firstTenCustomers": "/launch",
+    "feedbackLoop": "/review",
+    "mvpScope": "/scoping",
+    "toolStack": "/financials/burn"
+  },
+  "ideaQuestions": [
+    "fixedScope",
+    "upfront",
+    "noPerJobCost",
+    "repeat",
+    "cheapStart",
+    "sayNo"
+  ],
+  "companyChecks": [
+    "steadyIncome",
+    "accountant",
+    "customerAsks"
+  ],
+  "laterSteps": [
+    "firstHire",
+    "buildOrContract"
+  ],
+  "launchChecks": [
+    "worksEndToEnd",
+    "writtenScope",
+    "paymentPlan",
+    "costsCapped",
+    "incomeChecked"
+  ]
+}

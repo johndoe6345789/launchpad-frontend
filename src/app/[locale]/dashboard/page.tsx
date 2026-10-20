@@ -21,6 +21,16 @@ const OnboardingCta = nextDynamic(
   { loading: () => null },
 );
 
+const BeginnerHome = nextDynamic(
+  () => import('@/components/organisms/guide/BeginnerHome'),
+  { loading: () => null },
+);
+
+const AdvancedOnly = nextDynamic(
+  () => import('@/components/organisms/guide/AdvancedOnly'),
+  { loading: () => null },
+);
+
 /** Skip static prerendering for this page. */
 export const dynamic = 'force-dynamic';
 /** Props for the dashboard home page. */
@@ -51,8 +61,11 @@ export default async function DashboardPage({
       >
         {t('title')}
       </Typography>
-      <OnboardingCta />
-      <DashboardGrid />
+      <BeginnerHome />
+      <AdvancedOnly>
+        <OnboardingCta />
+        <DashboardGrid />
+      </AdvancedOnly>
     </Box>
   );
 }

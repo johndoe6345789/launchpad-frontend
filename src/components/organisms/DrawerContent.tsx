@@ -10,6 +10,9 @@ import {
   DrawerToolLinks,
 } from '../molecules/DrawerToolLinks';
 import navGroups from '@/constants/nav-groups.json';
+import { useGuideSelector } from './guide/useGuideSelector';
+import { isSimpleLink } from './guide/guidePath';
+import { AdvancedToggle } from './guide/AdvancedToggle';
 import type { NavLink } from './MobileDrawer';
 
 /** Props for DrawerContent. */
@@ -31,12 +34,18 @@ export const DrawerContent: React.FC<
 > = ({ links, onClose }) => {
   const t = useTranslations('nav');
   const { open, toggle } = useNavSections();
+  const advanced = useGuideSelector((s) => s.guide.advanced);
+  const shown = advanced
+    ? links : links.filter((l) => isSimpleLink(l.href));
 
   const grouped = navGroups.map((g) => ({
     ...g,
     label: t(g.labelKey as Parameters<typeof t>[0]),
-    links: links.filter((l) => l.section === g.key),
-  }));
+    links: shown
+      .filter((l) => l.section === g.key)
+      .map((l) => (!advanced && l.href === '/dashboard'
+        ? { ...l, label: t('home') } : l)),
+  })).filter((g) => g.links.length > 0);
 
   return (
     <div style={{ flex: 1, overflowY: 'auto' }}
@@ -55,8 +64,14 @@ export const DrawerContent: React.FC<
         />
       ))}
       <Divider />
-      <DrawerToolLinks excludeUrls={['/app']} />
+      <AdvancedToggle />
       <Divider />
+      {advanced && (
+        <>
+          <DrawerToolLinks excludeUrls={['/app']} />
+          <Divider />
+        </>
+      )}
       <DrawerFooter />
     </div>
   );

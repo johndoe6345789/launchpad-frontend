@@ -1,5 +1,13 @@
 [
   {
+    "id": "home",
+    "slug": "getting-started",
+    "afterSection": 3,
+    "src": "home.png",
+    "width": 1280,
+    "height": 2000
+  },
+  {
     "id": "sign-up-flow",
     "slug": "getting-started",
     "afterSection": 0,
