@@ -6,6 +6,10 @@
 /** Connection status returned by GET /api/zelt/status. */
 export interface ZeltStatus {
   readonly connected: boolean;
+  /** True when the connection is the stand-in demo service. */
+  readonly demo?: boolean;
+  /** The API key that works with the demo service. */
+  readonly demoKey?: string;
 }
 
 /** One payroll run period. */

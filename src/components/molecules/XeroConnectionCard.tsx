@@ -10,9 +10,9 @@ import { Card, CardContent, CardActions,
          Typography, Button, Chip } from '@shared/m3';
 import { useTranslations } from 'next-intl';
 import { useXeroStatusQuery,
+         useXeroConnectMutation,
          useXeroDisconnectMutation }
   from '@/store/api/xeroApi';
-import api from '@/constants/api.json';
 
 /**
  * @brief Shows Xero connection status and
@@ -22,7 +22,18 @@ export default function XeroConnectionCard() {
   const t = useTranslations('accounting');
   const { data, isLoading } = useXeroStatusQuery();
   const [disconnect] = useXeroDisconnectMutation();
+  const [connectXero, { isLoading: starting, error }] =
+    useXeroConnectMutation();
   const connected = data?.connected ?? false;
+
+  // The sign-in is a full-page trip to Xero and back, started by an
+  // authenticated request (a plain link cannot carry the login).
+  const start = async () => {
+    try {
+      const { url } = await connectXero().unwrap();
+      window.location.assign(url);
+    } catch { /* shown below */ }
+  };
 
   return (
     <Card variant="outlined"
@@ -45,6 +56,24 @@ export default function XeroConnectionCard() {
           color="text.secondary" sx={{ mt: 1 }}>
           {t('xero.description')}
         </Typography>
+        {data?.demo && (
+          <Typography variant="body2" sx={{ mt: 1 }}
+            data-testid="xero-demo-note">
+            {t('demoNote')}
+          </Typography>
+        )}
+        {data?.available === false && (
+          <Typography variant="body2" color="error"
+            sx={{ mt: 1 }}>
+            {t('xero.unavailable')}
+          </Typography>
+        )}
+        {error && (
+          <Typography variant="body2" color="error"
+            role="alert" sx={{ mt: 1 }}>
+            {t('xero.connectFailed')}
+          </Typography>
+        )}
       </CardContent>
       <CardActions>
         {connected ? (
@@ -56,7 +85,8 @@ export default function XeroConnectionCard() {
         ) : (
           <Button size="small" variant="contained"
             data-testid="xero-connect-btn"
-            href={api.xero.connect}>
+            disabled={starting || data?.available === false}
+            onClick={() => void start()}>
             {t('xero.connect')}
           </Button>
         )}

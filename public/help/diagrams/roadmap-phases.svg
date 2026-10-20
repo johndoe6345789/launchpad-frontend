@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 200" role="img" font-family="Inter,system-ui,sans-serif">
+<rect width="960" height="200" rx="12" fill="#fdf8ff"/>
+<defs><marker id="a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#6a1b9a"/></marker></defs>
+<g font-size="15" fill="#1d1b20" text-anchor="middle">
+<g fill="#ede0ff" stroke="#8000ff" stroke-width="2">
+<rect x="20" y="60" width="130" height="80" rx="10"/><rect x="180" y="60" width="130" height="80" rx="10"/><rect x="340" y="60" width="130" height="80" rx="10"/><rect x="500" y="60" width="130" height="80" rx="10"/><rect x="660" y="60" width="130" height="80" rx="10"/><rect x="820" y="60" width="120" height="80" rx="10" fill="#c8f0d2" stroke="#1b7a3a"/></g>
+<text x="85" y="95" font-weight="700">1 Validate</text><text x="85" y="117">your idea</text>
+<text x="245" y="95" font-weight="700">2 Build</text><text x="245" y="117">your plan</text>
+<text x="405" y="95" font-weight="700">3 Prepare</text><text x="405" y="117">to launch</text>
+<text x="565" y="95" font-weight="700">4 Launch</text><text x="565" y="117">and sell</text>
+<text x="725" y="95" font-weight="700">5 Grow</text><text x="725" y="117">and measure</text>
+<text x="880" y="95" font-weight="700">6 Scale</text><text x="880" y="117">up</text></g>
+<g stroke="#6a1b9a" stroke-width="2.5" marker-end="url(#a)"><path d="M152 100h26"/><path d="M312 100h26"/><path d="M472 100h26"/><path d="M632 100h26"/><path d="M792 100h26"/></g>
+<text x="480" y="30" font-size="16" font-weight="700" text-anchor="middle" fill="#1d1b20">Six phases, 25 steps in total</text>
+<text x="480" y="178" font-size="14" text-anchor="middle" fill="#49454f">Tick each step as you finish it; the progress bar follows.</text>
+</svg>

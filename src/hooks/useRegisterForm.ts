@@ -63,7 +63,8 @@ export function useRegisterForm(): UseRegisterFormReturn {
         displayName: f.displayName,
         password: f.password,
       });
-      router.push('/dashboard');
+      // The login page (OIDC) takes it from here.
+      router.push('/login');
     } catch (err: unknown) {
       const msg =
         (err as { data?: { message?: string } })

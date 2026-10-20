@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 300" role="img" font-family="Inter,system-ui,sans-serif">
+<rect width="960" height="300" rx="12" fill="#fdf8ff"/>
+<defs><marker id="a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#6a1b9a"/></marker></defs>
+<g font-size="14" fill="#1d1b20" text-anchor="middle">
+<g stroke-width="2"><rect x="30" y="20" width="200" height="50" rx="10" fill="#ede0ff" stroke="#8000ff"/><rect x="380" y="20" width="200" height="50" rx="10" fill="#fff" stroke="#1565c0"/><rect x="730" y="20" width="200" height="50" rx="10" fill="#ede0ff" stroke="#8000ff"/></g>
+<text x="130" y="50" font-weight="700">You (Accounting page)</text><text x="480" y="50" font-weight="700">Xero or demo consent</text><text x="830" y="50" font-weight="700">BusinessPlanner</text>
+<g stroke="#9a94a3" stroke-width="2" stroke-dasharray="5 5"><path d="M130 72v220"/><path d="M480 72v220"/><path d="M830 72v220"/></g>
+<g stroke="#6a1b9a" stroke-width="2.5" marker-end="url(#a)"><path d="M132 110h696"/><path d="M828 160H482"/><path d="M482 210h346"/><path d="M828 260H132"/></g>
+<g font-size="13" fill="#1d1b20"><text x="480" y="102">1 Press Connect to Xero</text><text x="655" y="152">2 Sent to the consent page</text><text x="655" y="202">3 You allow access; you are sent back with a signed code</text><text x="480" y="252">4 Card shows the organisation; figures appear</text></g></g>
+</svg>

@@ -1,4 +1,5 @@
 [
+  { "labelKey": "help", "href": "/help" },
   { "labelKey": "about", "href": "/about" },
   { "labelKey": "contact", "href": "/contact" }
 ]

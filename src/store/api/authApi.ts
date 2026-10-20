@@ -12,6 +12,13 @@ import type {
   TokenPair,
 } from '../../types/auth';
 
+/** Answer to a successful registration. */
+export interface RegisterResponse {
+  success: boolean;
+  message: string;
+  loginUrl: string;
+}
+
 /** Auth endpoints: login, register, logout, etc. */
 export const authApi = baseApi.injectEndpoints({
   endpoints: (build) => ({
@@ -29,9 +36,9 @@ export const authApi = baseApi.injectEndpoints({
     }),
 
     /** Register a new account. */
-    register: build.mutation<LoginResponse, RegisterRequest>({
+    register: build.mutation<RegisterResponse, RegisterRequest>({
       query: (body) => ({
-        url: '/auth/register',
+        url: '/api/auth/register',
         method: 'POST',
         body,
       }),

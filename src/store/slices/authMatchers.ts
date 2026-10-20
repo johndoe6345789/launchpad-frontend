@@ -82,9 +82,12 @@ export function addAuthMatchers(
         s.isLoading = true;
       },
     )
+    // Registration only creates the login (no tokens come back), so
+    // success just ends the loading state; signing in is a separate step.
     .addMatcher(
-      matchEp('register', 'fulfilled'),
-      storeCredentials,
+      matchEp('register', 'fulfilled'), (s) => {
+        s.isLoading = false;
+      },
     )
     .addMatcher(
       matchEp('register', 'rejected'), (s) => {

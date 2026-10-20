@@ -7,7 +7,7 @@
 
 import { useMemo } from 'react';
 import { useXeroStatusQuery, useXeroInvoicesQuery,
-         useXeroProfitLossQuery }
+         useXeroProfitLossQuery, useXeroCashFlowQuery }
   from '@/store/api/xeroApi';
 import { useZeltStatusQuery, useZeltPayrollQuery,
          useZeltEmployeesQuery }
@@ -41,6 +41,9 @@ export function useAccountingDashboard(): AccountingKpis {
   const { data: xPL,   isLoading: xPLL   } =
     useXeroProfitLossQuery(undefined,
       { skip: !xStat?.connected });
+  const { data: xCash, isLoading: xCashL } =
+    useXeroCashFlowQuery(undefined,
+      { skip: !xStat?.connected });
   const { data: zStat, isLoading: zStatL } =
     useZeltStatusQuery();
   const { data: zPay,  isLoading: zPayL  } =
@@ -64,15 +67,15 @@ export function useAccountingDashboard(): AccountingKpis {
 
     return {
       totalRevenue:   extractReportRow(xPL, 'Total Income'),
-      cashOnHand:     null,
+      cashOnHand:     extractReportRow(xCash, 'Cash position'),
       monthlyPayroll: latestRun?.totalCost ?? null,
       headcount:      zEmp  ? zEmp.length  : null,
       outstandingInv,
       xeroConnected:  xStat?.connected  ?? false,
       zeltConnected:  zStat?.connected  ?? false,
-      isLoading: xStatL || xInvL || xPLL ||
+      isLoading: xStatL || xInvL || xPLL || xCashL ||
                  zStatL || zPayL || zEmpL,
     };
-  }, [xStat, xInv, xPL, zStat, zPay, zEmp,
-      xStatL, xInvL, xPLL, zStatL, zPayL, zEmpL]);
+  }, [xStat, xInv, xPL, xCash, zStat, zPay, zEmp,
+      xStatL, xInvL, xPLL, xCashL, zStatL, zPayL, zEmpL]);
 }

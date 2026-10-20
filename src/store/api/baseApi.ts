@@ -21,6 +21,7 @@ export const baseApi = createApi({
   reducerPath: 'api',
   baseQuery: baseQueryWithRetry,
   tagTypes: [
+    'Businesses', 'XeroStatus', 'ZeltStatus',
     'Auth', 'User', 'Notification',
     'Gamification', 'Chat',
     'Dashboard', 'Features', 'Comments',

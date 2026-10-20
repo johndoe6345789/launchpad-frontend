@@ -44,8 +44,7 @@ describe('useAuth', () => {
     });
     registerMutMock.mockReturnValue({
       unwrap: () => Promise.resolve({
-        user: { id: 'u2' },
-        tokens: { accessToken: 't', refreshToken: 'r' },
+        success: true, message: 'ok', loginUrl: '/login',
       }),
     });
   });
@@ -69,6 +68,18 @@ describe('useAuth', () => {
         type: 'auth/setCredentials',
       }),
     );
+  });
+
+  it('register creates the login but does not sign in', async () => {
+    dispatchMock.mockClear();
+    const { result } = renderHook(() => useAuth());
+    await act(async () => {
+      await result.current.register({
+        email: 'a@b.com', username: 'a', password: 'long enough pw',
+      });
+    });
+    expect(registerMutMock).toHaveBeenCalled();
+    expect(dispatchMock).not.toHaveBeenCalled();
   });
 
   it('logout calls mutation and dispatches clearCredentials', async () => {

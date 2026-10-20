@@ -48,11 +48,15 @@ const resetServer = jest.fn();
 const dispatch = jest.fn();
 let serverData: { steps: Record<string, boolean> } | undefined;
 let local: Record<string, boolean> = {};
+let business: string | null = null;
 
 jest.mock('@/store/hooks', () => ({
   useAppDispatch: () => dispatch,
   useAppSelector: (fn: (s: unknown) => unknown) =>
-    fn({ planner: { completedSteps: local } }),
+    fn({
+      planner: { completedSteps: local },
+      business: { activeId: business },
+    }),
 }));
 jest.mock('@/store/api/gamificationApi', () => ({
   useCompleteStepMutation: () => [jest.fn()],
@@ -66,6 +70,7 @@ jest.mock('@/store/api/plannerProgressApi', () => ({
 describe('usePlannerProgress server sync', () => {
   beforeEach(() => {
     jest.clearAllMocks();
+    business = null;
     saveStep.mockReturnValue({
       unwrap: () => Promise.resolve({ completed: true, first_time: false }),
     });
@@ -98,5 +103,20 @@ describe('usePlannerProgress server sync', () => {
     expect(saveStep).toHaveBeenCalledWith({ id: 'a', completed: false });
     act(() => result.current.reset());
     expect(resetServer).toHaveBeenCalled();
+  });
+});
+
+describe('usePlannerProgress across businesses', () => {
+  beforeEach(() => jest.clearAllMocks());
+
+  it('adopts the server copy again after another business is opened', () => {
+    business = null; local = {}; serverData = { steps: { a: true } };
+    const { rerender } = renderHook(() =>
+      require('../usePlannerProgress').usePlannerProgress());
+    expect(dispatch).toHaveBeenCalledTimes(1);
+    business = 'biz-2'; serverData = { steps: { z: true } };
+    rerender();
+    expect(dispatch).toHaveBeenLastCalledWith(
+      expect.objectContaining({ payload: { z: true } }));
   });
 });

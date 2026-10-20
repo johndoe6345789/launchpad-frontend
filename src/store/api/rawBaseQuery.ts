@@ -45,6 +45,11 @@ export const rawBaseQuery = fetchBaseQuery({
         'Authorization', `Bearer ${token}`,
       );
     }
+    // Which business the planning tools are working on (none = the
+    // main one). Other services ignore the header.
+    const business =
+      (getState() as RootState).business?.activeId;
+    if (business) headers.set('X-Business-Id', business);
     return headers;
   },
 });

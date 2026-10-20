@@ -21,7 +21,7 @@ export default function ZeltConnectionCard() {
   const t = useTranslations('accounting');
   const [apiKey, setApiKey] = useState('');
   const { data, isLoading } = useZeltStatusQuery();
-  const [connect, { isLoading: saving }] =
+  const [connect, { isLoading: saving, error }] =
     useZeltConnectMutation();
   const [disconnect] = useZeltDisconnectMutation();
   const connected = data?.connected ?? false;
@@ -43,6 +43,18 @@ export default function ZeltConnectionCard() {
           size="small"
           data-testid="zelt-status-chip"
         />
+        {data?.demo && (
+          <Typography variant="body2" sx={{ mt: 1 }}
+            data-testid="zelt-demo-note">
+            {t('demoNote')} {t('zelt.demoKey', { key: data.demoKey ?? '' })}
+          </Typography>
+        )}
+        {error && (
+          <Typography variant="body2" color="error"
+            role="alert" sx={{ mt: 1 }}>
+            {t('zelt.connectFailed')}
+          </Typography>
+        )}
         {!connected && (
           <TextField
             label={t('zelt.apiKeyLabel')}

@@ -17,7 +17,7 @@ export const zeltApi = baseApi.injectEndpoints({
     /** Connection status for the current user. */
     zeltStatus: build.query<ZeltStatus, void>({
       query: () => Z.status,
-      providesTags: ['Zelt'],
+      providesTags: ['ZeltStatus'],
     }),
 
     /** List payroll runs. */
@@ -49,13 +49,13 @@ export const zeltApi = baseApi.injectEndpoints({
       query: (body) => ({
         url: Z.connect, method: 'POST', body,
       }),
-      invalidatesTags: ['Zelt'],
+      invalidatesTags: ['ZeltStatus'],
     }),
 
     /** Remove Zelt connection (DELETE). */
     zeltDisconnect: build.mutation<void, void>({
       query: () => ({ url: Z.disconnect, method: 'DELETE' }),
-      invalidatesTags: ['Zelt'],
+      invalidatesTags: ['ZeltStatus'],
     }),
   }),
   overrideExisting: false,

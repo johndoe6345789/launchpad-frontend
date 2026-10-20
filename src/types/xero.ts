@@ -7,6 +7,10 @@
 export interface XeroStatus {
   readonly connected: boolean;
   readonly tenantName?: string;
+  /** Whether this server has Xero set up at all. */
+  readonly available?: boolean;
+  /** True when the connection is the stand-in demo service. */
+  readonly demo?: boolean;
 }
 
 /** A single Xero invoice. */

@@ -27,10 +27,18 @@ const initialState: StartupTypeState = {
   biggestChallenge: null,
 };
 
+/** The state a business starts with. */
+export const initialStartupState = initialState;
+
 const startupTypeSlice = createSlice({
   name: 'startupType',
   initialState,
   reducers: {
+    /** Swap in another business's stage state wholesale. */
+    replaceStartupState(_state, action: PayloadAction<StartupTypeState>) {
+      return action.payload;
+    },
+
     /**
      * Set the user's chosen startup archetype.
      * @param state - Current startupType state.
@@ -94,6 +102,7 @@ export const {
   setOnboardingComplete,
   setOnboardingData,
   clearStartupType,
+  replaceStartupState,
 } = startupTypeSlice.actions;
 
 export default startupTypeSlice.reducer;

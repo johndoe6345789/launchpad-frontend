@@ -17,7 +17,7 @@ export const xeroApi = baseApi.injectEndpoints({
     /** Connection status for the current user. */
     xeroStatus: build.query<XeroStatus, void>({
       query: () => X.status,
-      providesTags: ['Xero'],
+      providesTags: ['XeroStatus'],
     }),
 
     /** List authorised + paid invoices. */
@@ -55,9 +55,17 @@ export const xeroApi = baseApi.injectEndpoints({
     }),
 
     /** Disconnect Xero (DELETE). */
+    /** Starts the Xero sign-in; the answer says where to send the
+     *  browser. */
+    xeroConnect: build.mutation<{ url: string }, void>({
+      query: () => ({ url: X.connect, method: 'POST' }),
+    }),
+
     xeroDisconnect: build.mutation<void, void>({
       query: () => ({ url: X.disconnect, method: 'DELETE' }),
-      invalidatesTags: ['Xero'],
+      // Only the status: the data queries are skipped once it says
+      // "not connected"; refetching them first would just fail.
+      invalidatesTags: ['XeroStatus'],
     }),
   }),
   overrideExisting: false,
@@ -70,5 +78,6 @@ export const {
   useXeroProfitLossQuery,
   useXeroBalanceSheetQuery,
   useXeroCashFlowQuery,
+  useXeroConnectMutation,
   useXeroDisconnectMutation,
 } = xeroApi;

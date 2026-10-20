@@ -19,7 +19,7 @@ interface UseAuthReturn {
   isAuthenticated: boolean;
   /** Log in with email and password. */
   login: (req: LoginRequest) => Promise<void>;
-  /** Register a new account. */
+  /** Register a new account (does not sign in). */
   register: (req: RegisterRequest) => Promise<void>;
   /** Log out the current user. */
   logout: () => Promise<void>;
@@ -63,15 +63,11 @@ export function useAuth(): UseAuthReturn {
 
   const register = useCallback(
     async (req: RegisterRequest) => {
-      const res = await registerMut(req).unwrap();
-      dispatch(
-        setCredentials({
-          user: res.user,
-          ...res.tokens,
-        }),
-      );
+      // Registration only creates the login; signing in is the
+      // shared login page's job (it needs the password again).
+      await registerMut(req).unwrap();
     },
-    [registerMut, dispatch],
+    [registerMut],
   );
 
   const logout = useCallback(async () => {

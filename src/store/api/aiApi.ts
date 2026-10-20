@@ -23,6 +23,9 @@ export type {
 } from './aiTypes';
 export type { DocumentType } from './aiTypes';
 
+/** A model running on the server's CPU can take a minute or two. */
+const AI_TIMEOUT_MS = 180_000;
+
 /** AI API endpoints injected into baseApi. */
 export const aiApi = baseApi.injectEndpoints({
   endpoints: (build) => ({
@@ -38,6 +41,7 @@ export const aiApi = baseApi.injectEndpoints({
         url: apiConstants.ai.stepSuggestion,
         method: 'POST',
         body,
+        timeout: AI_TIMEOUT_MS,
       }),
     }),
 
@@ -53,6 +57,7 @@ export const aiApi = baseApi.injectEndpoints({
         url: apiConstants.ai.riskReport,
         method: 'POST',
         body,
+        timeout: AI_TIMEOUT_MS,
       }),
     }),
 
@@ -68,6 +73,7 @@ export const aiApi = baseApi.injectEndpoints({
         url: apiConstants.ai.draftDocument,
         method: 'POST',
         body,
+        timeout: AI_TIMEOUT_MS,
       }),
     }),
   }),

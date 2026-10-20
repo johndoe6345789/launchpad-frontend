@@ -2,7 +2,8 @@ import { renderHook } from '@testing-library/react';
 
 const xStat = jest.fn(), xInv = jest.fn(),
       xPL   = jest.fn(), zStat = jest.fn(),
-      zPay  = jest.fn(), zEmp  = jest.fn();
+      zPay  = jest.fn(), zEmp  = jest.fn(),
+      xCash = jest.fn();
 
 const skip = { isLoading: false };
 
@@ -12,6 +13,8 @@ jest.mock('@/store/api/xeroApi', () => ({
     o?.skip ? skip : xInv(),
   useXeroProfitLossQuery: (_: unknown, o: {skip?:boolean}) =>
     o?.skip ? skip : xPL(),
+  useXeroCashFlowQuery:   (_: unknown, o: {skip?:boolean}) =>
+    o?.skip ? skip : xCash(),
 }));
 jest.mock('@/store/api/zeltApi', () => ({
   useZeltStatusQuery:    () => zStat(),
@@ -39,6 +42,20 @@ describe('useAccountingDashboard', () => {
     expect(k.totalRevenue).toBeNull();
     expect(k.outstandingInv).toBeNull();
     expect(k.xeroConnected).toBe(false);
+  });
+
+  it('reads cash on hand from the summary report', () => {
+    xStat.mockReturnValue(cn());
+    xInv.mockReturnValue({ isLoading: false, data: { Invoices: [] } });
+    xPL.mockReturnValue({ isLoading: false, data: undefined });
+    xCash.mockReturnValue({ isLoading: false, data: { Reports: [{
+      ReportID: 'x', ReportName: 'Executive Summary', Rows: [
+        { rowType: 'SummaryRow',
+          cells: [{ value: 'Cash position' }, { value: '1234.50' }] },
+      ] }] } });
+    const { result } =
+      renderHook(() => useAccountingDashboard());
+    expect(result.current.cashOnHand).toBe(1234.5);
   });
 
   it('sums only AUTHORISED outstanding invoices', () => {

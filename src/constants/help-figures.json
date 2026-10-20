@@ -1,0 +1,130 @@
+[
+  {
+    "id": "home",
+    "slug": "getting-started",
+    "afterSection": 3,
+    "src": "home.png",
+    "width": 1280,
+    "height": 2000
+  },
+  {
+    "id": "sign-up-flow",
+    "slug": "getting-started",
+    "afterSection": 0,
+    "src": "diagrams/sign-up-flow.svg",
+    "width": 960,
+    "height": 190
+  },
+  {
+    "id": "register",
+    "slug": "getting-started",
+    "afterSection": 0,
+    "src": "register.png",
+    "width": 980,
+    "height": 720
+  },
+  {
+    "id": "dashboard",
+    "slug": "getting-started",
+    "afterSection": 3,
+    "src": "dashboard.png",
+    "width": 1280,
+    "height": 720
+  },
+  {
+    "id": "roadmap-phases",
+    "slug": "roadmap",
+    "afterSection": 0,
+    "src": "diagrams/roadmap-phases.svg",
+    "width": 960,
+    "height": 200
+  },
+  {
+    "id": "roadmap",
+    "slug": "roadmap",
+    "afterSection": 1,
+    "src": "roadmap.png",
+    "width": 1280,
+    "height": 1000
+  },
+  {
+    "id": "canvas",
+    "slug": "plan-tools",
+    "afterSection": 0,
+    "src": "canvas.png",
+    "width": 1280,
+    "height": 720
+  },
+  {
+    "id": "kpi",
+    "slug": "plan-tools",
+    "afterSection": 3,
+    "src": "kpi.png",
+    "width": 1280,
+    "height": 720
+  },
+  {
+    "id": "risks",
+    "slug": "plan-tools",
+    "afterSection": 5,
+    "src": "risks.png",
+    "width": 1280,
+    "height": 720
+  },
+  {
+    "id": "accounts-businesses",
+    "slug": "businesses",
+    "afterSection": 0,
+    "src": "diagrams/accounts-businesses.svg",
+    "width": 960,
+    "height": 330
+  },
+  {
+    "id": "businesses",
+    "slug": "businesses",
+    "afterSection": 0,
+    "src": "businesses.png",
+    "width": 900,
+    "height": 500
+  },
+  {
+    "id": "manage",
+    "slug": "businesses",
+    "afterSection": 3,
+    "src": "manage.png",
+    "width": 800,
+    "height": 520
+  },
+  {
+    "id": "accounting",
+    "slug": "accounting",
+    "afterSection": 0,
+    "src": "accounting.png",
+    "width": 1280,
+    "height": 800
+  },
+  {
+    "id": "xero-connect",
+    "slug": "accounting",
+    "afterSection": 1,
+    "src": "diagrams/xero-connect.svg",
+    "width": 960,
+    "height": 300
+  },
+  {
+    "id": "ai-path",
+    "slug": "ai-help",
+    "afterSection": 1,
+    "src": "diagrams/ai-path.svg",
+    "width": 960,
+    "height": 180
+  },
+  {
+    "id": "menu",
+    "slug": "account",
+    "afterSection": 0,
+    "src": "menu.png",
+    "width": 580,
+    "height": 560
+  }
+]

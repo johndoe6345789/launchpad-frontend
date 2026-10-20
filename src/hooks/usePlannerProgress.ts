@@ -65,14 +65,17 @@ export function usePlannerProgress() {
   const { data: server } = useGetPlannerProgressQuery();
   const [saveStep] = useSetPlannerStepMutation();
   const [resetServer] = useResetPlannerProgressMutation();
-  const adopted = useRef(false);
+  const businessKey = useAppSelector(
+    (s) => s.business?.activeId ?? 'main',
+  );
+  const adoptedFor = useRef<string | null>(null);
 
-  // Adopt the server's copy once per mount. A user whose server
-  // copy is empty but who has local ticks (from before progress
-  // was stored server-side) migrates them up instead.
+  // Adopt the server's copy once per mount and per business. A user
+  // whose server copy is empty but who has local ticks (from before
+  // progress was stored server-side) migrates them up instead.
   useEffect(() => {
-    if (!server || adopted.current) return;
-    adopted.current = true;
+    if (!server || adoptedFor.current === businessKey) return;
+    adoptedFor.current = businessKey;
     const remote = server.steps ?? {};
     if (Object.keys(remote).length === 0) {
       Object.keys(completedSteps)
@@ -83,7 +86,7 @@ export function usePlannerProgress() {
       return;
     }
     dispatch(replaceSteps(remote));
-  }, [server, completedSteps, dispatch, saveStep]);
+  }, [server, businessKey, completedSteps, dispatch, saveStep]);
 
   const toggle = useCallback(
     (stepId: string) => {

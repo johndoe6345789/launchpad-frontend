@@ -14,3 +14,6 @@ export * from './uiSlice';
 
 export { default as plannerReducer } from './plannerSlice';
 export * from './plannerSlice';
+
+export { default as guideReducer } from './guideSlice';
+export * from './guideSlice';

@@ -18,6 +18,8 @@ import {
 } from '../molecules/GamificationSummary';
 import NotificationBell
   from '../molecules/NotificationBell';
+import BusinessSwitcher from './BusinessSwitcher';
+import { useWhoAmIQuery } from '@/store/api/businessesApi';
 import navLinks from '@/constants/nav-links.json';
 
 /** Props for the Navbar organism. */
@@ -32,6 +34,9 @@ export const Navbar: React.FC<NavbarProps> = ({
   const {
     user: kcUser, isAuthenticated, logout,
   } = useKeycloak();
+  const { data: me } = useWhoAmIQuery(
+    undefined, { skip: !isAuthenticated },
+  );
   const kcRoles = kcUser?.realm_access?.roles ?? [];
   const role: User['role'] =
     kcRoles.includes('admin') ? 'admin'
@@ -39,10 +44,12 @@ export const Navbar: React.FC<NavbarProps> = ({
     : 'user';
   const user: User | null = kcUser ? {
     id: kcUser.sub,
-    email: kcUser.email ?? '',
+    email: me?.email || kcUser.email || '',
     username: kcUser.preferred_username ?? '',
     displayName:
-      kcUser.name ?? kcUser.preferred_username ?? '',
+      me?.displayName
+      || kcUser.name
+      || kcUser.preferred_username || '',
     role,
     createdAt: '',
     updatedAt: '',
@@ -70,6 +77,7 @@ export const Navbar: React.FC<NavbarProps> = ({
         <Toolbar>
           <MobileDrawer links={LINKS} />
           <NavbarLogo label={tCommon('appName')} />
+          {isAuthenticated && <BusinessSwitcher />}
           <div className="spacer" />
           <DesktopActions />
           {isAuthenticated && <GamificationSummary compact />}

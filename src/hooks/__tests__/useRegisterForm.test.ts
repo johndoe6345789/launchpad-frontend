@@ -72,7 +72,7 @@ describe('useRegisterForm', () => {
       await result.current.submit(fakeEvent);
     });
     expect(registerMock).toHaveBeenCalled();
-    expect(pushMock).toHaveBeenCalledWith('/dashboard');
+    expect(pushMock).toHaveBeenCalledWith('/login');
   });
 
   it('sets apiError on register failure', async () => {
