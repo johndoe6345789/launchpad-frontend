@@ -114,7 +114,8 @@
     "groupDiscover": "Research",
     "groupFinance": "Financials",
     "groupExecute": "Strategy & Execution",
-    "groupConnect": "Community"
+    "groupConnect": "Community",
+    "help": "Help"
   },
   "hero": {
     "title": "Launch your startup with confidence",
@@ -1438,5 +1439,760 @@
     "renameLabel": "Rename {name}",
     "mainNote": "Your main business: it can be renamed but not deleted.",
     "confirmDelete": "Delete {name} and everything planned in it? This cannot be undone."
+  },
+  "help": {
+    "title": "Help",
+    "subtitle": "How to use BusinessPlanner, step by step.",
+    "searchLabel": "Search help",
+    "searchPlaceholder": "Search help…",
+    "noResults": "Nothing matches that. Try a shorter search, or browse the list.",
+    "back": "All help topics",
+    "related": "Related topics",
+    "onThisPage": "On this page",
+    "articles": {
+      "getting-started": {
+        "title": "Getting started",
+        "summary": "Create an account, sign in and find your way around in ten minutes.",
+        "sections": [
+          {
+            "heading": "1. Create an account",
+            "body": [
+              "Open Register, choose a username, give your email address and a display name, and pick a password of at least 10 characters. You sign in with your email address and that password.",
+              "If you already have an account, use Sign in instead."
+            ]
+          },
+          {
+            "heading": "2. Sign in",
+            "body": [
+              "Sign in on the page that opens after registering. You stay signed in for up to two weeks on this device, and your session refreshes while you use the app."
+            ]
+          },
+          {
+            "heading": "3. Choose your stage",
+            "body": [
+              "The first time you sign in you may be asked what kind of startup you are building and what stage you are at. This only tailors the Planner roadmap and the hints you see; you can change it later."
+            ]
+          },
+          {
+            "heading": "4. Know where things are",
+            "body": [
+              "The menu (top left) groups everything: Plan (Planner, Dashboard, Milestones, Weekly review), Discover (Market research, Decisions, Scoping), Finance (Financials, Accounting), Execute (OKRs, KPIs, PDCA, Risks, Pivots) and Connect (Community, Resources, Profile). The dashboard shows your progress at a glance.",
+              "The business name next to the logo is the business you are working on. See Several businesses to add more.",
+              "Your home page shows one next step at a time. The menu is short on purpose: turn on Show advanced tools at the bottom of the menu to see everything."
+            ]
+          },
+          {
+            "heading": "5. What to do first",
+            "body": [
+              "Work through the first steps of the Planner roadmap, then fill in your Business model canvas and a first weekly review. Small, honest entries are better than perfect ones: you can edit everything later."
+            ]
+          }
+        ]
+      },
+      "roadmap": {
+        "title": "The Planner roadmap",
+        "summary": "A step-by-step path from idea to launch, saved to your account.",
+        "sections": [
+          {
+            "heading": "What it is",
+            "body": [
+              "The Planner is a six-phase checklist for building a startup. Each step has a short explanation of why it matters; open a step to read it."
+            ]
+          },
+          {
+            "heading": "Ticking steps off",
+            "body": [
+              "Tick a step when it is genuinely done. Your ticks are saved to your account, so they follow you from phone to laptop and survive clearing your browser. Each business has its own roadmap progress.",
+              "The first time you tick a step you earn points; unticking and ticking again does not earn more."
+            ]
+          },
+          {
+            "heading": "Resetting",
+            "body": [
+              "Reset clears every tick for the business you have open. It cannot be undone, so only use it to start over."
+            ]
+          },
+          {
+            "heading": "Getting a suggestion",
+            "body": [
+              "On a step you can ask for an AI suggestion tailored to your stage. See AI features for how that works and its limits."
+            ]
+          },
+          {
+            "heading": "Be honest with it",
+            "body": [
+              "The roadmap, your dashboard and the AI risk report all read your ticks. Ticking steps you have not done only gives you a misleading picture."
+            ]
+          }
+        ]
+      },
+      "plan-tools": {
+        "title": "The planning tools",
+        "summary": "What each tool is for and how to use it well.",
+        "sections": [
+          {
+            "heading": "Market research",
+            "body": [
+              "Business model canvas: nine boxes describing your business; it saves as you type. Market size: your total market, the share you can target and the share you can reach. Personas: the people you serve. Competitors: who else solves the problem. Discovery log: notes from customer conversations, including what you learned was true or false."
+            ]
+          },
+          {
+            "heading": "Financials",
+            "body": [
+              "Pricing: your price, target monthly income and expected growth. Unit economics: what a customer costs to win (CAC), what they pay (ARPU), how many leave (churn) and your costs; it shows whether each customer is worth winning. Burn rate: monthly spending and cash in the bank. Kill criteria: the lines that tell you to stop or change course, decided in advance. Hypotheses: assumptions you will test.",
+              "All money amounts are in pounds unless a label says otherwise."
+            ]
+          },
+          {
+            "heading": "Decisions and scoping",
+            "body": [
+              "Decisions records what you chose, the options you considered and why, so you can learn from it later. Scoping scores features by Impact, Confidence and Ease (1 to 10) and multiplies them into a score so you can decide what goes into the first version."
+            ]
+          },
+          {
+            "heading": "OKRs, KPIs and PDCA",
+            "body": [
+              "OKRs: an objective for a quarter with measurable key results; update their values as you go. KPIs: numbers you track with a target; use Update value to record progress and the status shows whether you are on track. PDCA: a plan-do-check-act cycle for one improvement at a time; complete each phase in order."
+            ]
+          },
+          {
+            "heading": "Hoshin",
+            "body": [
+              "The Hoshin pages link long-term objectives to the companies and partners that help you reach them, and the bowling chart tracks a result month by month."
+            ]
+          },
+          {
+            "heading": "Risks",
+            "body": [
+              "Rate each risk by probability and impact (1 to 5); the score is probability times impact. Write a mitigation and an owner, and set the status as you deal with it."
+            ]
+          },
+          {
+            "heading": "Pivots",
+            "body": [
+              "Record when and why you changed direction, so you remember what you learned."
+            ]
+          },
+          {
+            "heading": "Weekly review",
+            "body": [
+              "Once a week, note your wins, challenges, next goals and morale. It takes five minutes and builds a record you can look back on. You can save one review per week and edit it that week."
+            ]
+          },
+          {
+            "heading": "Companies and accelerators",
+            "body": [
+              "Keep track of competitors, customers, partners, investors and programmes you might apply to. Startup compare lets you compare companies on investment, weeks to bootstrap and monthly revenue."
+            ]
+          }
+        ]
+      },
+      "businesses": {
+        "title": "Several businesses on one account",
+        "summary": "Plan more than one business and switch between them.",
+        "sections": [
+          {
+            "heading": "The business selector",
+            "body": [
+              "The name next to the logo is the business you have open. Click it to switch, create a new business or manage them."
+            ]
+          },
+          {
+            "heading": "What is separate",
+            "body": [
+              "Each business has its own canvas, market research, pricing and other financials, KPIs, OKRs, PDCA cycles, risks, decisions, scoping, weekly reviews, roadmap progress, startup stage and its own Xero or Zelt connection. Points, badges and your profile belong to you and are shared."
+            ]
+          },
+          {
+            "heading": "Creating one",
+            "body": [
+              "Choose New business, give it a name and Create. It opens empty and ready to fill in. You can have up to 20 and names must be different (capital letters do not count)."
+            ]
+          },
+          {
+            "heading": "Renaming and deleting",
+            "body": [
+              "Open Manage businesses to rename any business. Your main business can be renamed but not deleted. Deleting another business removes everything planned in it for good, so you are asked to confirm."
+            ]
+          },
+          {
+            "heading": "Your main business",
+            "body": [
+              "Everything you had before businesses existed lives in your main business, and it is always the first in the list."
+            ]
+          }
+        ]
+      },
+      "accounting": {
+        "title": "Accounting: Xero and Zelt",
+        "summary": "See invoices, cash and payroll next to your plan.",
+        "sections": [
+          {
+            "heading": "What it shows",
+            "body": [
+              "Connect Xero to see revenue, outstanding invoices and cash on hand, and Zelt to see payroll cost and headcount. The Accounting page turns them into five headline figures."
+            ]
+          },
+          {
+            "heading": "Connecting Xero",
+            "body": [
+              "Choose Connect Xero, sign in on the Xero page that opens and allow access. You come back to the Accounting page connected. Disconnect at any time from the same card."
+            ]
+          },
+          {
+            "heading": "Connecting Zelt",
+            "body": [
+              "Enter your Zelt API key and choose Connect. The key is checked first; a key that does not work is not saved."
+            ]
+          },
+          {
+            "heading": "Demo mode",
+            "body": [
+              "On this site the connections go to stand-in demo services with made-up sample data, so you can see how the pages work without an account. A notice on each card says so, and the Xero page says \"This is a demo, not Xero\". Use the key shown on the Zelt card. The figures are not real."
+            ]
+          },
+          {
+            "heading": "Each business separately",
+            "body": [
+              "A connection belongs to the business you have open, so different businesses can use different accounts."
+            ]
+          }
+        ]
+      },
+      "ai-help": {
+        "title": "AI features",
+        "summary": "Risk reports, step suggestions and document drafts, and their limits.",
+        "sections": [
+          {
+            "heading": "What is available",
+            "body": [
+              "Step suggestions on the roadmap, an AI risk report that looks at the steps you have completed, and a drafter for documents such as a pitch outline, investor update, NDA or job description."
+            ]
+          },
+          {
+            "heading": "How it works here",
+            "body": [
+              "The AI runs on a small model hosted on this server, not a large cloud service. Replies can take from a few seconds to a minute, so give it time after you press the button."
+            ]
+          },
+          {
+            "heading": "Check what it says",
+            "body": [
+              "Treat the output as a starting point from a junior assistant. It can be wrong or generic. Never rely on a drafted legal document (such as an NDA) without having it checked by someone qualified."
+            ]
+          },
+          {
+            "heading": "Your data",
+            "body": [
+              "Requests are processed on this server. Your plan is not sent to an outside AI provider unless the site owner has configured one."
+            ]
+          }
+        ]
+      },
+      "account": {
+        "title": "Your account and your data",
+        "summary": "Signing in, signing out, passwords and what is stored.",
+        "sections": [
+          {
+            "heading": "Signing in and out",
+            "body": [
+              "Sign in with your email address and password. Use Sign out from the avatar menu (top right) on shared computers."
+            ]
+          },
+          {
+            "heading": "Passwords",
+            "body": [
+              "Change or reset by asking the person who runs the site: password reset by email is not available yet. Use a long password you do not use anywhere else."
+            ]
+          },
+          {
+            "heading": "What is stored",
+            "body": [
+              "Your plan data (everything you type into the tools) is stored on this site's server against your account. Your name and email are those you gave when registering. The cookie banner covers only the cookies the site needs to work."
+            ]
+          },
+          {
+            "heading": "Points and streaks",
+            "body": [
+              "You earn points for completing roadmap steps and keeping a streak. The leaderboard only shows people who have chosen to be listed; change that in Settings."
+            ]
+          },
+          {
+            "heading": "Deleting data",
+            "body": [
+              "You can delete a whole business (Manage businesses) or individual records in each tool. To remove your account entirely, ask the person who runs the site."
+            ]
+          }
+        ]
+      },
+      "faq": {
+        "title": "Questions and fixes",
+        "summary": "Answers to common questions and what to do when something looks wrong.",
+        "sections": [
+          {
+            "heading": "My changes did not save",
+            "body": [
+              "Most tools save when you press Save or as you type. If you were signed out in the meantime, sign in again and re-enter the last change. Check the business name next to the logo: you may be looking at a different business than you meant to."
+            ]
+          },
+          {
+            "heading": "I was signed out unexpectedly",
+            "body": [
+              "Sessions refresh while you use the app. If you were away for a long time you will need to sign in again; nothing you saved is lost."
+            ]
+          },
+          {
+            "heading": "The AI is slow or says it could not answer",
+            "body": [
+              "The model runs on a modest server. Wait up to a minute, then try again. If it keeps failing, tell the person who runs the site."
+            ]
+          },
+          {
+            "heading": "A page shows an error or is empty",
+            "body": [
+              "Reload the page. If it is still empty, the business you have open may have nothing in it yet, which is normal for a new business."
+            ]
+          },
+          {
+            "heading": "Is the Xero data real?",
+            "body": [
+              "No. On this site Xero and Zelt are demo stand-ins with sample data. See Accounting."
+            ]
+          },
+          {
+            "heading": "I cannot find a feature",
+            "body": [
+              "Use the menu (top left) or the search box. Each tool is listed under Plan, Discover, Finance, Execute or Connect."
+            ]
+          },
+          {
+            "heading": "Who do I ask for more help?",
+            "body": [
+              "Use the Contact page in the footer."
+            ]
+          },
+          {
+            "heading": "Where did most of the menu go?",
+            "body": [
+              "The menu starts short on purpose. Open the menu and turn on Show advanced tools to see everything, including the full dashboard."
+            ]
+          }
+        ]
+      },
+      "sole-trader": {
+        "title": "Sole trader or limited company?",
+        "summary": "Why you can start without a company, and when to look into one.",
+        "sections": [
+          {
+            "heading": "The short answer",
+            "body": [
+              "You can start as a sole trader. You and the business are the same person in law, there is nothing to register with Companies House, and you are not required to have an accountant.",
+              "A limited company is worth looking at later, once income is steady. This is general information for the UK, not advice. Check gov.uk or ask a professional for your own case."
+            ]
+          },
+          {
+            "heading": "What a sole trader has to do",
+            "body": [
+              "Keep a simple record of money in and money out, with receipts. A spreadsheet is enough.",
+              "Tell HMRC and file a Self Assessment tax return if your trading income goes over £1,000 in a tax year. Under that amount the trading allowance may cover you. Check the current rules on gov.uk.",
+              "A separate bank account is not required but makes the records much easier."
+            ]
+          },
+          {
+            "heading": "Universal Credit",
+            "body": [
+              "Self-employed income affects Universal Credit. Tell your work coach before you start trading and report your earnings as they ask.",
+              "There are special rules for the first months of a new business. Ask your work coach what applies to you, because the rules change."
+            ]
+          },
+          {
+            "heading": "What a limited company adds",
+            "body": [
+              "A company is a separate legal body. That can limit what you personally owe, but it brings more admin: annual accounts, a Corporation Tax return, a confirmation statement and payroll if you pay yourself a salary. Most people pay an accountant to handle this.",
+              "The practical protection at the start is usually insurance, such as public liability, not a company."
+            ]
+          },
+          {
+            "heading": "When to look into a company",
+            "body": [
+              "Wait until all three are true: three months of steady income, you can afford an accountant every month, and customers or the work genuinely need a company. The home page has a card that tracks these."
+            ]
+          }
+        ],
+        "related": [
+          "low-risk-ideas",
+          "getting-started"
+        ]
+      },
+      "low-risk-ideas": {
+        "title": "Choosing a low-risk idea",
+        "summary": "Six questions to ask before you spend time or money on an idea.",
+        "sections": [
+          {
+            "heading": "Why risk matters more than size",
+            "body": [
+              "Most early money is lost to three things: work that never ends, getting paid late or not at all, and costs that grow with every customer. A small idea that avoids these beats a big one that does not.",
+              "No idea is guaranteed to earn money. The aim is to make it cheap and quick to find out."
+            ]
+          },
+          {
+            "heading": "The six questions",
+            "body": [
+              "1. Is the job the same size every time, with a written list of what is included?",
+              "2. Can you agree the price first and take payment or a deposit up front?",
+              "3. Does each job cost almost nothing besides your time, with no AI credits, materials or fees per customer?",
+              "4. Will the same customers pay again, for example monthly?",
+              "5. Can you start for under your budget and test it for a month?",
+              "6. Is it easy to say no, with no long revisions or demanding clients?",
+              "The home page has a card that scores your idea against these and tells you what to fix."
+            ]
+          },
+          {
+            "heading": "Scope creep",
+            "body": [
+              "Scope creep is when a customer keeps asking for a little more at the same price. Prevent it by writing down what is included, what is not, and how many changes are covered. Anything else is a priced extra. Custom website work is the classic example, so be careful with it."
+            ]
+          },
+          {
+            "heading": "AI credits",
+            "body": [
+              "If an AI does the work for each customer, your costs rise with every customer. Prefer ideas where you or a fixed checklist do the work and AI only helps you plan or write. Work out the cost of one job and put it in your price."
+            ]
+          },
+          {
+            "heading": "Build in private, then test",
+            "body": [
+              "It is fine to build the first version before you have any customers. Keep it private, cap what you spend, and write down what it will not do.",
+              "While you build, talk to a few people about the problem (you are listening, not selling). Building with no conversations at all is the usual way to lose weeks.",
+              "When it works end to end, tick the Ready for your first customer list on the home page, then aim for 3 paying customers."
+            ]
+          }
+        ],
+        "related": [
+          "sole-trader",
+          "roadmap"
+        ]
+      }
+    },
+    "figures": {
+      "sign-up-flow": {
+        "alt": "Four steps from creating an account to the dashboard.",
+        "caption": "Creating an account, signing in and choosing your stage lead to your dashboard.",
+        "legend": []
+      },
+      "register": {
+        "alt": "The Create Account form with five numbered fields.",
+        "caption": "The Create Account form.",
+        "legend": [
+          "Username: letters, numbers, - and _.",
+          "Email address: used as a second way to sign in.",
+          "Display name: what the navigation bar shows.",
+          "Password: choose a long one.",
+          "Create Account: press when everything is filled in."
+        ]
+      },
+      "dashboard": {
+        "alt": "The dashboard with the menu, business selector, points and avatar marked.",
+        "caption": "The top bar, with the menu, business selector, points and avatar.",
+        "legend": [
+          "Menu: opens the list of pages.",
+          "Business selector: pick which business you are planning and costing.",
+          "Points and streak: reward for steady progress.",
+          "Avatar: profile, settings and log out."
+        ]
+      },
+      "roadmap-phases": {
+        "alt": "Six roadmap phases in a row, from Validate to Scale up.",
+        "caption": "The six roadmap phases, in order.",
+        "legend": []
+      },
+      "roadmap": {
+        "alt": "The roadmap with a ticked step and its explanation opened.",
+        "caption": "The roadmap page.",
+        "legend": [
+          "A step you have already ticked off.",
+          "Another ticked step in the same phase.",
+          "Why this matters: opens a short explanation of the step."
+        ]
+      },
+      "canvas": {
+        "alt": "The Business Model Canvas with three boxes marked.",
+        "caption": "The Business Model Canvas.",
+        "legend": [
+          "Problem: what hurts for your customer.",
+          "Solution: how you fix it.",
+          "Revenue streams: how money comes in."
+        ]
+      },
+      "kpi": {
+        "alt": "The KPI Scorecard with its form and status counts marked.",
+        "caption": "The KPI Scorecard.",
+        "legend": [
+          "Title: name of the number you want to track.",
+          "Add Metric: saves it to the scorecard.",
+          "Status counts: on track, at risk and off track.",
+          "A metric card: current value against target."
+        ]
+      },
+      "risks": {
+        "alt": "The Risk Assessment register with the form and a high score marked.",
+        "caption": "The Risk Assessment page.",
+        "legend": [
+          "Risk title: describe what could go wrong.",
+          "Add Risk: adds it to the register.",
+          "Score: probability times impact; high scores come first to fix."
+        ]
+      },
+      "accounts-businesses": {
+        "alt": "One account holds a main business and others, each with its own tools and data.",
+        "caption": "One account, several businesses. Each has its own separate plan data.",
+        "legend": []
+      },
+      "businesses": {
+        "alt": "The business selector open with three options marked.",
+        "caption": "The business selector.",
+        "legend": [
+          "The selector shows the business you are working in.",
+          "Another business; choose it to switch.",
+          "New business: creates an empty one.",
+          "Manage businesses: rename or delete."
+        ]
+      },
+      "manage": {
+        "alt": "The Manage businesses dialog with name, Save and Delete marked.",
+        "caption": "The Manage businesses dialog.",
+        "legend": [
+          "Name: type a new name.",
+          "Save: keeps the new name.",
+          "Delete: removes that business and its data. The main business cannot be deleted."
+        ]
+      },
+      "accounting": {
+        "alt": "The Accounting page with the Xero card, the Zelt card and the overview marked.",
+        "caption": "The Accounting page with both services connected.",
+        "legend": [
+          "Xero connection card: shows the organisation once connected.",
+          "Zelt connection card: payroll and people data.",
+          "Key financial metrics: revenue, payroll, cash and headcount."
+        ]
+      },
+      "xero-connect": {
+        "alt": "A sequence from pressing Connect to seeing figures.",
+        "caption": "How connecting Xero works. In demo mode the consent page is a stand-in.",
+        "legend": []
+      },
+      "ai-path": {
+        "alt": "A request travels from the AI button to a model on our own server.",
+        "caption": "Where an AI answer comes from.",
+        "legend": []
+      },
+      "menu": {
+        "alt": "The avatar menu with Profile, Settings and Log out.",
+        "caption": "The avatar menu.",
+        "legend": []
+      },
+      "home": {
+        "alt": "The home page with the next step, readiness lists and idea check marked.",
+        "caption": "The home page.",
+        "legend": [
+          "Your next step. Do it, then press I have done this.",
+          "Ready for your first customer? Tick these before you take one.",
+          "Do I need a limited company? The answer is usually not yet.",
+          "Is my idea low risk? Six questions that show what to fix.",
+          "Help me: replays the tour or opens the help articles."
+        ]
+      }
+    }
+  },
+  "guide": {
+    "advancedLabel": "Show advanced tools",
+    "advancedHint": "Off keeps the menu short. Turn on for every tool and the full dashboard.",
+    "homeIntro": "One step at a time. Nothing here costs money or commits you to anything.",
+    "nextLabel": "Your next step",
+    "doThis": "Do this step",
+    "markDone": "I have done this",
+    "showMe": "Show me where to click",
+    "allDone": "You have finished the starter steps. Well done. Turn on advanced tools when you want more.",
+    "starterProgress": "{done} of {total} starter steps done",
+    "companyTitle": "Do I need a limited company?",
+    "companyBody": "Not yet. You can start as a sole trader: no company to register and no accountant required to begin. Wait until you know there is enough steady income to justify one.",
+    "companyChecksTitle": "Think about a company when all of these are true:",
+    "companyChecks": {
+      "steadyIncome": "I have had steady income for three months in a row.",
+      "accountant": "I can afford an accountant every month.",
+      "customerAsks": "Customers or the work itself need a company."
+    },
+    "companyNotYet": "Not yet. Keep going as you are.",
+    "companyReady": "You may be ready to look into it. Read the guide first.",
+    "companyLearn": "Read: sole trader or company?",
+    "ideaTitle": "Is my idea low risk?",
+    "ideaIntro": "Answer honestly. A no is useful: it tells you what to fix.",
+    "yes": "Yes",
+    "no": "No",
+    "ideaVerdict": {
+      "low": "Looks low risk. Test it with 3 customers first.",
+      "mostly": "Nearly there. Fix the points below before you start.",
+      "risky": "Risky as it stands. Change the idea using the points below."
+    },
+    "ideaReset": "Start again",
+    "ideaLearn": "Read: choosing a low-risk idea",
+    "idea": {
+      "fixedScope": {
+        "q": "Is the job the same size every time, with a written list of what is included?",
+        "why": "Open-ended work is where unpaid time disappears.",
+        "fix": "Write down exactly what is included and what is not, and refuse anything else or charge extra."
+      },
+      "upfront": {
+        "q": "Can you agree the price before you start, and take a deposit or payment up front?",
+        "why": "Being paid late, or not at all, is the biggest early risk.",
+        "fix": "Change the offer so a deposit or payment in advance is normal."
+      },
+      "noPerJobCost": {
+        "q": "Does each job cost you almost nothing besides your time (no AI credits, materials or fees per customer)?",
+        "why": "If costs rise with every customer, a busy month can lose you money.",
+        "fix": "Work out the cost of one job and add it to your price, or pick a version where AI only helps with planning."
+      },
+      "repeat": {
+        "q": "Will the same customers pay again, for example monthly?",
+        "why": "Finding customers is the hard part. Repeat income needs far fewer of them.",
+        "fix": "Look for a monthly or regular version of the same service."
+      },
+      "cheapStart": {
+        "q": "Can you start for under your budget (for example £500) and test it for a month?",
+        "why": "If a test is cheap you can afford to be wrong.",
+        "fix": "Cut the start-up list to the bare minimum and borrow or rent what you can."
+      },
+      "sayNo": {
+        "q": "Is it easy to say no, with no long revisions, deadlines or demanding clients?",
+        "why": "A single demanding customer can swallow a week.",
+        "fix": "Add a limit, such as two rounds of changes, and a price for extras."
+      }
+    },
+    "laterTitle": "Later: company, tax and accounting",
+    "laterBody": "These steps are hidden because you do not need them yet. Do them when you are sure the business will earn enough to be worth it.",
+    "laterShow": "Show them anyway",
+    "fabLabel": "Help me",
+    "fabAround": "Show me around",
+    "fabPage": "Walk me through this page",
+    "fabHelp": "Open the help articles",
+    "tourProgress": "Step {n} of {total}",
+    "tourNext": "Next",
+    "tourBack": "Back",
+    "tourSkip": "Skip",
+    "tourDone": "Done",
+    "tourGoThere": "Take me there",
+    "steps": {
+      "defineProblem": {
+        "how": "Write one sentence: who has this problem, and what does it cost them today? Open the Business Model Canvas and fill in only the Problem box.",
+        "cost": "Free · about 20 minutes"
+      },
+      "interviewCustomers": {
+        "how": "Ask 10 people who might pay: \"How do you handle this today? What does it cost you?\" Do not pitch. Listen, and write down what they say in the Discovery log.",
+        "cost": "Free · a few evenings"
+      },
+      "mapCompetitors": {
+        "how": "Find 3 other people already selling something similar. Note their price and what their customers complain about.",
+        "cost": "Free · about an hour"
+      },
+      "landingPageTest": {
+        "how": "Make a private first version that only you can see, a draft page or a simple mock-up, and check it works and says what you mean. Show it to one or two people you trust and ask what is unclear. You are not selling anything yet.",
+        "cost": "Free · about a week"
+      },
+      "onePagePlan": {
+        "how": "Fill in the rest of the canvas in plain words. One page, no jargon. It only has to make sense to you.",
+        "cost": "Free · about an hour"
+      },
+      "revenueModel": {
+        "how": "Decide exactly what you sell and for how much: one thing, one price, clear limits on what is included. Ask for payment before you start if you can.",
+        "cost": "Free · about 30 minutes"
+      },
+      "idealCustomer": {
+        "how": "Describe the one kind of person you will sell to first: who they are, where they are, and how you will reach them.",
+        "cost": "Free · about 30 minutes"
+      },
+      "financialProjections": {
+        "how": "Work out your running costs, your price, and how many customers cover your costs. Check that your start-up spend stays inside your budget.",
+        "cost": "Free · about an hour"
+      },
+      "launchChannel": {
+        "how": "Pick ONE way to reach customers, for example word of mouth, a local group or a flyer. Trying everything at once costs time and money.",
+        "cost": "Free · about 30 minutes"
+      },
+      "websiteAndMessaging": {
+        "how": "Write a short, clear description of what you do, who it is for and what it costs. A one-page sheet or a social post is plenty. Skip a full website for now.",
+        "cost": "Free · about an hour"
+      },
+      "firstTenCustomers": {
+        "how": "Only start when everything on the Ready for your first customer list is ticked. Begin with 3 customers, say no politely to anything outside what you agreed, and note what each one asked for.",
+        "cost": "Mostly your time"
+      },
+      "feedbackLoop": {
+        "how": "Ask each customer what was good and what was missing. Use the answers to adjust what you offer and what you charge.",
+        "cost": "Free · 10 minutes per customer"
+      },
+      "mvpScope": {
+        "how": "Write down the smallest version that does the job, and a list of what it will NOT do. This list stops the project growing while you build in private.",
+        "cost": "Free · about an hour"
+      },
+      "toolStack": {
+        "how": "Choose the cheapest tools you need to build it. Write down a monthly spending cap, including any AI credits, and stop when you reach it.",
+        "cost": "Set your cap first"
+      }
+    },
+    "tours": {
+      "welcome": {
+        "hello": {
+          "title": "Welcome. Let us show you around.",
+          "body": "Five quick steps. Nothing here costs money or commits you to anything. You can press Skip at any time."
+        },
+        "next": {
+          "title": "Your next step is always here",
+          "body": "One step at a time. Read it, press Do this step, and when you have done it press I have done this."
+        },
+        "company": {
+          "title": "You do not need a company yet",
+          "body": "Most people start as a sole trader. This card tells you when it is worth looking into a limited company."
+        },
+        "idea": {
+          "title": "Check an idea before you spend time on it",
+          "body": "Six yes or no questions that catch the usual traps, like never-ending work or costs that grow with every customer."
+        },
+        "fab": {
+          "title": "Stuck? Press this",
+          "body": "This button is on every page. It replays this tour, walks you through the page you are on, or opens the help articles."
+        }
+      },
+      "roadmap": {
+        "progress": {
+          "title": "This is your whole journey",
+          "body": "The bar counts every step in the roadmap. You only need the early ones to get started."
+        },
+        "step": {
+          "title": "This is your next step",
+          "body": "Do it, then tick this box. Your progress is saved."
+        },
+        "why": {
+          "title": "Not sure why? Press this",
+          "body": "It explains in plain words why the step matters."
+        },
+        "later": {
+          "title": "The rest can wait",
+          "body": "Company registration, tax set-up and accounting software are hidden until you need them. You can show them any time."
+        }
+      }
+    },
+    "launchTitle": "Ready for your first customer?",
+    "launchBody": "Build and test in private first. No customers until you can tick every box.",
+    "launchChecksTitle": "Tick these when they are true:",
+    "launchChecks": {
+      "worksEndToEnd": "I have tested it myself from start to finish and it works.",
+      "writtenScope": "I have written down what is included, what is not, and how many changes are covered.",
+      "paymentPlan": "I know my price and how and when I get paid.",
+      "costsCapped": "I know my running costs, including AI credits, and have set a cap.",
+      "incomeChecked": "I have asked my work coach how earnings affect my Universal Credit."
+    },
+    "launchNotYet": "Not yet. Keep building in private.",
+    "launchReady": "All ticked. You can take your first customer.",
+    "launchLearn": "Read: choosing a low-risk idea"
   }
 }

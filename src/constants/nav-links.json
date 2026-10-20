@@ -48,5 +48,7 @@
   { "labelKey": "resources",
     "href": "/resources", "section": "connect" },
   { "labelKey": "profile",
-    "href": "/profile", "section": "connect" }
+    "href": "/profile", "section": "connect" },
+  { "labelKey": "help",
+    "href": "/help", "section": "connect" }
 ]

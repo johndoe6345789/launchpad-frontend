@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 180" role="img" font-family="Inter,system-ui,sans-serif">
+<rect width="960" height="180" rx="12" fill="#fdf8ff"/>
+<defs><marker id="a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#6a1b9a"/></marker></defs>
+<g font-size="14" fill="#1d1b20" text-anchor="middle">
+<g fill="#ede0ff" stroke="#8000ff" stroke-width="2"><rect x="20" y="45" width="170" height="80" rx="10"/><rect x="250" y="45" width="170" height="80" rx="10"/><rect x="480" y="45" width="170" height="80" rx="10"/><rect x="710" y="45" width="230" height="80" rx="10" fill="#e8f4ff" stroke="#1565c0"/></g>
+<text x="105" y="78" font-weight="700">Get AI Tip</text><text x="105" y="100">or Draft with AI</text>
+<text x="335" y="78" font-weight="700">Your question</text><text x="335" y="100">plus the step text</text>
+<text x="565" y="78" font-weight="700">AI service</text><text x="565" y="100">on our own server</text>
+<text x="825" y="78" font-weight="700">Small open model</text><text x="825" y="100">answers in 10-60 s</text></g>
+<g stroke="#6a1b9a" stroke-width="2.5" marker-end="url(#a)"><path d="M192 85h56"/><path d="M422 85h56"/><path d="M652 85h56"/></g>
+<text x="480" y="26" font-size="16" font-weight="700" text-anchor="middle" fill="#1d1b20">Where an AI answer comes from</text>
+<text x="480" y="156" font-size="13" text-anchor="middle" fill="#49454f">Your text stays on this server. Always check the answer before relying on it.</text>
+</svg>

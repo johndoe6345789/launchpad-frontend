@@ -1,6 +1,6 @@
 'use client';
 
-import React from 'react';
+import React, { useState } from 'react';
 import Box from '@shared/m3/Box';
 import { useTranslations } from 'next-intl';
 import { usePlannerProgress } from '@/hooks';
@@ -13,9 +13,12 @@ import { StageGateBar }
 import { PlannerProgressBar }
   from '@/components/molecules/PlannerProgressBar';
 import { useAppSelector } from '@/store/hooks';
+import { useGuideSelector } from './guide/useGuideSelector';
 import roadmap from '@/constants/startup-roadmap.json';
 import SkillsGapBanner
   from '@/components/molecules/SkillsGapBanner';
+import { isLaterPhase } from './guide/guidePath';
+import { LaterPhasesCard } from './guide/LaterPhasesCard';
 
 /** Map of biggest-challenge slug → highlighted phase id. */
 const CHALLENGE_PHASE: Record<string, string> = {
@@ -41,6 +44,9 @@ export const StartupRoadmap: React.FC<
   StartupRoadmapProps
 > = ({ testId = 'startup-roadmap' }) => {
   const t = useTranslations('planner');
+  const advanced = useGuideSelector((s) => s.guide.advanced);
+  const [showLater, setShowLater] = useState(false);
+  const hideLater = !advanced && !showLater;
   const {
     completedSteps, phases, toggle, reset,
     overallPct, totalDone, totalSteps,
@@ -56,24 +62,27 @@ export const StartupRoadmap: React.FC<
 
   return (
     <Box data-testid={testId} aria-label={t('pageTitle')}>
-      <SkillsGapBanner />
+      {advanced && <SkillsGapBanner />}
       <PlannerHeader
         selectedSlug={selectedSlug}
         onboardingComplete={onboardingComplete}
       />
-      {onboardingComplete && selectedSlug &&
+      {advanced && onboardingComplete && selectedSlug &&
         selectedStage && (
         <StageGateBar
           typeSlug={selectedSlug}
           currentStage={selectedStage}
         />
       )}
-      <PlannerProgressBar
-        pct={overallPct}
-        done={totalDone}
-        total={totalSteps}
-      />
+      <Box data-tour="roadmap-progress">
+        <PlannerProgressBar
+          pct={overallPct}
+          done={totalDone}
+          total={totalSteps}
+        />
+      </Box>
       {roadmap.phases.map((phase, i) => (
+        hideLater && isLaterPhase(phase.id) ? null : (
         <Box key={phase.id}>
           {phase.id === highlightedPhase && (
             <PriorityBadge />
@@ -86,7 +95,11 @@ export const StartupRoadmap: React.FC<
             onToggle={toggle}
           />
         </Box>
+        )
       ))}
+      {hideLater && (
+        <LaterPhasesCard onShow={() => setShowLater(true)} />
+      )}
       <Box sx={{ mt: 2, textAlign: 'right' }}>
         <PlannerResetButton onReset={reset} />
       </Box>

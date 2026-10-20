@@ -15,5 +15,7 @@ import type { RootReducerState } from './store';
 export const persistConfig: PersistConfig<RootReducerState> = {
   key: 'businessplanner-root',
   storage,
-  whitelist: ['theme', 'planner', 'startupType', 'business'],
+  whitelist: [
+    'theme', 'planner', 'startupType', 'business', 'guide',
+  ],
 };
