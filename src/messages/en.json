@@ -1437,7 +1437,6 @@
     "delete": "Delete",
     "deleteForever": "Delete forever",
     "renameLabel": "Rename {name}",
-    "mainNote": "Your main business: it can be renamed but not deleted.",
     "confirmDelete": "Delete {name} and everything planned in it? This cannot be undone."
   },
   "help": {
@@ -1612,13 +1611,13 @@
           {
             "heading": "Renaming and deleting",
             "body": [
-              "Open Manage businesses to rename any business. Your main business can be renamed but not deleted. Deleting another business removes everything planned in it for good, so you are asked to confirm."
+              "Open Manage businesses to rename any business. Deleting a business removes everything planned in it for good, so you are asked to confirm. You can delete any of your businesses."
             ]
           },
           {
-            "heading": "Your main business",
+            "heading": "Deleting your last business",
             "body": [
-              "Everything you had before businesses existed lives in your main business, and it is always the first in the list."
+              "You always have at least one business to work in. If you delete the last one, a new empty business called My business is created so the tools have somewhere to save. Rename it to whatever you like."
             ]
           }
         ]
@@ -1944,8 +1943,8 @@
         ]
       },
       "accounts-businesses": {
-        "alt": "One account holds a main business and others, each with its own tools and data.",
-        "caption": "One account, several businesses. Each has its own separate plan data.",
+        "alt": "One account holds several equal businesses, each with its own tools and data.",
+        "caption": "One account, several businesses. Each has its own separate plan data and can be renamed or deleted.",
         "legend": []
       },
       "businesses": {
@@ -1964,7 +1963,7 @@
         "legend": [
           "Name: type a new name.",
           "Save: keeps the new name.",
-          "Delete: removes that business and its data. The main business cannot be deleted."
+          "Delete: removes that business and its data, after you confirm."
         ]
       },
       "accounting": {

@@ -43,13 +43,12 @@ const ManageRow: React.FC<{
           onClick={() => void run(() => onRename(b.id, name))}>
           {t('save')}
         </Button>
-        {!b.isDefault && !confirm && (
+        {!confirm && (
           <Button color="error" onClick={() => setConfirm(true)}>
             {t('delete')}
           </Button>
         )}
       </Box>
-      {b.isDefault && <span>{t('mainNote')}</span>}
       {confirm && (
         <Box role="alert"
           sx={{ display: 'flex', gap: 1, alignItems: 'center' }}>

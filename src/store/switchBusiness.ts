@@ -15,7 +15,7 @@ import {
 import type { AppDispatch, RootState } from './store';
 
 /**
- * @param id - Business to open; null opens the main business.
+ * @param id - Business to open; null opens the oldest business.
  * @returns A thunk to dispatch.
  */
 export const switchBusiness =
