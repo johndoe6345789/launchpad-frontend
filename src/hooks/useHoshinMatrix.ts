@@ -32,6 +32,8 @@ export interface HoshinMatrix {
   vision:       XMatrixRow[];
   breakthrough: XMatrixRow[];
   annual:       XMatrixRow[];
+  /** Companies a person can link an objective to. */
+  organisations: Organisation[];
   isLoading:    boolean;
 }
 
@@ -70,6 +72,7 @@ export function useHoshinMatrix(): HoshinMatrix {
         (r) => r.objective.horizon === 'breakthrough'),
       annual:       rows.filter(
         (r) => r.objective.horizon === 'annual'),
+      organisations: orgs,
       isLoading: lo || ll || la,
     };
   }, [objectives, links, orgs, lo, ll, la]);

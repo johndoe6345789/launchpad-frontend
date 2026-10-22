@@ -45,7 +45,7 @@ export const PlannerHeader: React.FC<
         action={
           <Button
             component={Link}
-            href="onboarding"
+            href="/onboarding"
             color="inherit"
             size="small"
             aria-label={t('completeSetupCta')}

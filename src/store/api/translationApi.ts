@@ -24,7 +24,7 @@ export const translationApi =
       getLocales: build.query<
         { locales: string[] }, void
       >({
-        query: () => '/locales',
+        query: () => '/api/locales',
         providesTags: ['Translation'],
       }),
 
@@ -33,7 +33,7 @@ export const translationApi =
         Record<string, string>, string
       >({
         query: (locale) =>
-          `/translations/${locale}`,
+          `/api/translations/${locale}`,
         providesTags: ['Translation'],
       }),
 
@@ -42,7 +42,7 @@ export const translationApi =
         CoverageResponse, void
       >({
         query: () =>
-          '/translations/coverage',
+          '/api/translations/coverage',
         providesTags: ['Translation'],
       }),
 
@@ -52,7 +52,7 @@ export const translationApi =
         UpsertPayload
       >({
         query: (body) => ({
-          url: '/admin/translations',
+          url: '/api/admin/translations',
           method: 'PUT',
           body,
         }),
@@ -66,7 +66,7 @@ export const translationApi =
         query: ({
           locale, namespace, key,
         }) => ({
-          url: `/admin/translations`
+          url: `/api/admin/translations`
             + `/${locale}`
             + `/${namespace}/${key}`,
           method: 'DELETE',

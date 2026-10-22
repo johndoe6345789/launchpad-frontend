@@ -1,26 +1,7 @@
 import createMiddleware from 'next-intl/middleware';
 import { NextResponse, type NextRequest } from 'next/server';
 import { routing } from './i18n/routing';
-
-/**
- * Path patterns (after locale strip) that require a
- * signed-in user. Anything else is open to guests.
- */
-const PROTECTED = [
-  /^\/admin(\/|$)/,
-  /^\/profile(\/|$)/,
-  /^\/settings(\/|$)/,
-  /^\/notifications(\/|$)/,
-  /^\/messages(\/|$)/,
-  /^\/shop\/checkout(\/|$)/,
-];
-
-/** Strip the leading /xx or /xx-XX locale segment. */
-function stripLocale(p: string): string {
-  return p.replace(
-    /^\/[a-z]{2}(?:-[A-Z]{2})?(?=\/|$)/, '',
-  ) || '/';
-}
+import { isProtectedPath } from './lib/protectedPaths';
 
 const handleI18n = createMiddleware(routing);
 
@@ -38,8 +19,7 @@ const handleI18n = createMiddleware(routing);
  * @returns A response (redirect or i18n-rewritten).
  */
 export function proxy(request: NextRequest) {
-  const path = stripLocale(request.nextUrl.pathname);
-  const needsAuth = PROTECTED.some((re) => re.test(path));
+  const needsAuth = isProtectedPath(request.nextUrl.pathname);
   if (needsAuth && !request.cookies.has('businessplanner_sso')) {
     const next = encodeURIComponent(request.nextUrl.pathname);
     const base = request.nextUrl.basePath;

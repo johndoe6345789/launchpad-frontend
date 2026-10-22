@@ -56,7 +56,7 @@ export const OnboardingCta: React.FC = () => {
           </Box>
           <Button
             component={Link}
-            href="onboarding"
+            href="/onboarding"
             variant="contained"
             aria-label={t('onboardingCtaCta')}
             data-testid="onboarding-cta-btn"

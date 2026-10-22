@@ -68,6 +68,18 @@ describe('BusinessSwitcher', () => {
     await waitFor(() => expect(remove).toHaveBeenCalledWith(first));
   });
 
+  it('keeps a long list of businesses inside a scrolling area', () => {
+    render(<BusinessSwitcher />);
+    fireEvent.click(screen.getByTestId('business-switcher'));
+    const list = screen.getByTestId('business-list');
+    expect(list.style.overflowY).toBe('auto');
+    expect(list.style.maxHeight).toContain('vh');
+    expect(list.style.resize).toBe('vertical');   // drag the corner triangle
+    expect(list.contains(screen.getByTestId('business-option-m'))).toBe(true);
+    expect(list.contains(screen.getByTestId('business-new'))).toBe(false);
+    expect(list.contains(screen.getByTestId('business-manage'))).toBe(false);
+  });
+
   it('renders nothing until the list has loaded', () => {
     vmState = { ...vmState, isLoading: true, active: undefined };
     const { container } = render(<BusinessSwitcher />);

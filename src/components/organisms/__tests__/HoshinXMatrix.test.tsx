@@ -3,8 +3,29 @@ import { render, screen } from '@testing-library/react';
 import HoshinXMatrix
   from '../HoshinXMatrix';
 
+import messages from '@/messages/en.json';
+
+jest.mock('next-intl', () => ({
+  useTranslations: (ns?: string) => (key: string) => {
+    const root = ns ? ns.split('.').reduce(
+      (o: unknown, k) => (o as Record<string, unknown>)?.[k],
+      messages as unknown,
+    ) : messages;
+    const v = key.split('.').reduce(
+      (o: unknown, k) => (o as Record<string, unknown>)?.[k], root);
+    return typeof v === 'string' ? v : key;
+  },
+}));
+
 jest.mock('@/hooks/useHoshinMatrix', () => ({
   useHoshinMatrix: jest.fn(),
+}));
+jest.mock('@/hooks/useHoshinActions', () => ({
+  useHoshinActions: () => ({
+    addObjective: jest.fn().mockResolvedValue(true),
+    removeObjective: jest.fn(), addLink: jest.fn(),
+    removeLink: jest.fn(), error: null,
+  }),
 }));
 
 const { useHoshinMatrix } =

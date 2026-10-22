@@ -2,6 +2,20 @@ import React from 'react';
 import { render, screen } from '@testing-library/react';
 import BowlingChartTab from '../BowlingChartTab';
 
+import messages from '@/messages/en.json';
+
+jest.mock('next-intl', () => ({
+  useTranslations: (ns?: string) => (key: string) => {
+    const root = ns ? ns.split('.').reduce(
+      (o: unknown, k) => (o as Record<string, unknown>)?.[k],
+      messages as unknown,
+    ) : messages;
+    const v = key.split('.').reduce(
+      (o: unknown, k) => (o as Record<string, unknown>)?.[k], root);
+    return typeof v === 'string' ? v : key;
+  },
+}));
+
 jest.mock('@/hooks/useBowlingChart', () => ({
   useBowlingChart: jest.fn(),
 }));

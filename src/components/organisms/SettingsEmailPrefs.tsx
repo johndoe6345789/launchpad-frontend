@@ -2,35 +2,35 @@
 
 /**
  * @file SettingsEmailPrefs.tsx
- * @brief Email preferences section: opt-out switch for
- *        welcome drip and re-engagement sequences.
+ * @brief Email preferences section: a switch for the welcome and
+ *        re-engagement emails, saved on the server.
  */
 import React, { useState } from 'react';
 import { useTranslations } from 'next-intl';
-import { Switch } from '@shared/m3/Switch';
+import { Switch } from '@shared/m3';
 import Typography from '@shared/m3/Typography';
 import { SettingsCard, SettingsRow } from './SettingsCard';
 import {
-  useOptOutMutation,
-} from '@/store/api/emailSequencesApi';
+  useGetAccountPrefsQuery, useSetAccountPrefsMutation,
+} from '@/store/api/accountPrefsApi';
 
 /**
- * Email preferences card shown in Settings.
- * Lets users opt out of marketing / drip emails.
+ * Email preferences card shown in Settings. The switch shows what
+ * is saved and can be turned back on as well as off.
  *
  * @returns Email preferences settings card.
  */
 const SettingsEmailPrefs: React.FC = () => {
   const t = useTranslations('settings');
-  const [subscribed, setSubscribed] = useState(true);
-  const [optOut] = useOptOutMutation();
+  const { data } = useGetAccountPrefsQuery();
+  const [save, { isLoading }] = useSetAccountPrefsMutation();
+  const [failed, setFailed] = useState(false);
+  const subscribed = data?.emailSequences ?? true;
 
   const handleToggle = () => {
-    const next = !subscribed;
-    setSubscribed(next);
-    if (!next) {
-      void optOut().catch(() => { /* no-op */ });
-    }
+    setFailed(false);
+    save({ emailSequences: !subscribed }).unwrap()
+      .catch(() => setFailed(true));
   };
 
   return (
@@ -44,11 +44,17 @@ const SettingsEmailPrefs: React.FC = () => {
       <SettingsRow label={t('emailDripLabel')}>
         <Switch
           checked={subscribed}
+          disabled={!data || isLoading}
           onChange={handleToggle}
           aria-label={t('emailDripLabel')}
           data-testid="email-drip-toggle"
         />
       </SettingsRow>
+      {failed && (
+        <Typography role="alert" variant="body2" color="error">
+          {t('prefsSaveFailed')}
+        </Typography>
+      )}
     </SettingsCard>
   );
 };

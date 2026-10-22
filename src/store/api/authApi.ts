@@ -28,7 +28,7 @@ export const authApi = baseApi.injectEndpoints({
       LoginRequest
     >({
       query: (body) => ({
-        url: '/auth/login',
+        url: '/api/auth/login',
         method: 'POST',
         body,
       }),
@@ -48,7 +48,7 @@ export const authApi = baseApi.injectEndpoints({
     /** Log out and invalidate the refresh token. */
     logout: build.mutation<void, void>({
       query: () => ({
-        url: '/auth/logout',
+        url: '/api/auth/logout',
         method: 'POST',
       }),
       invalidatesTags: ['Auth'],
@@ -60,7 +60,7 @@ export const authApi = baseApi.injectEndpoints({
       { refreshToken: string }
     >({
       query: (body) => ({
-        url: '/auth/refresh',
+        url: '/api/auth/refresh',
         method: 'POST',
         body,
       }),
@@ -68,7 +68,7 @@ export const authApi = baseApi.injectEndpoints({
 
     /** Fetch the currently authenticated user. */
     getMe: build.query<User, void>({
-      query: () => '/auth/me',
+      query: () => '/api/auth/me',
       providesTags: ['Auth'],
     }),
 
@@ -78,7 +78,7 @@ export const authApi = baseApi.injectEndpoints({
       { email: string }
     >({
       query: (body) => ({
-        url: '/auth/forgot-password',
+        url: '/api/auth/forgot-password',
         method: 'POST',
         body,
       }),

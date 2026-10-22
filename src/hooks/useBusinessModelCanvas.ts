@@ -27,8 +27,10 @@ type BmcKey = keyof BmcCanvas;
  * @returns Canvas state and change/autosave handlers.
  */
 export function useBusinessModelCanvas() {
-  const { data, isLoading } = useGetBmcQuery();
-  const { scheduleAutosave } = useBmcAutosave();
+  const { data, isLoading } = useGetBmcQuery(
+    undefined, { refetchOnMountOrArgChange: true },
+  );
+  const { scheduleAutosave, flush } = useBmcAutosave();
   const [canvas, setCanvas] =
     useState<BmcCanvas>(EMPTY);
 
@@ -40,5 +42,5 @@ export function useBusinessModelCanvas() {
     setCanvas((p) => ({ ...p, [k]: v }));
 
   return { canvas, isLoading, handleChange,
-    scheduleAutosave };
+    scheduleAutosave, flushAutosave: flush };
 }

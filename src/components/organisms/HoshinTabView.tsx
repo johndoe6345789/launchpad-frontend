@@ -24,10 +24,10 @@ const HoshinTabView: React.FC = () => {
         onChange={(_, v) => setTab(v as number)}
         aria-label="Hoshin Kanri tabs"
         style={{ marginBottom: 24 }}>
-        <Tab label={t('xMatrix')}
+        <Tab value={0} label={t('xMatrix')}
           aria-label={t('xMatrix')}
           data-testid="hoshin-tab-xmatrix" />
-        <Tab label={t('bowling')}
+        <Tab value={1} label={t('bowling')}
           aria-label={t('bowling')}
           data-testid="hoshin-tab-bowling" />
       </Tabs>

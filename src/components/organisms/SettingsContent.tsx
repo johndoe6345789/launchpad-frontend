@@ -12,6 +12,7 @@ import {
 import SettingsAdminCard from './SettingsAdminCard';
 import SettingsPreferences from './SettingsPreferences';
 import SettingsEmailPrefs from './SettingsEmailPrefs';
+import SettingsLeaderboardPrefs from './SettingsLeaderboardPrefs';
 import SettingsMentor from
   '@/components/molecules/SettingsMentor';
 
@@ -65,6 +66,7 @@ const SettingsContent: React.FC = () => {
 
       <SettingsPreferences />
       <SettingsEmailPrefs />
+      <SettingsLeaderboardPrefs />
       <SettingsMentor />
       {isAdmin && <SettingsAdminCard />}
     </Box>

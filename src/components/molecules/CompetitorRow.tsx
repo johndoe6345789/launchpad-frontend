@@ -10,6 +10,7 @@ import TableCell from '@shared/m3/TableCell';
 import Chip from '@shared/m3/Chip';
 import MuiIconButton from '@shared/m3/IconButton';
 import { useTranslations } from 'next-intl';
+import { websiteUrl } from '@/lib/websiteUrl';
 import type { Competitor } from '@/types/marketResearch';
 
 /** Props for CompetitorRow. */
@@ -35,19 +36,24 @@ export const CompetitorRow: React.FC<
   const tc = useTranslations('common');
   const { id, name, website, stage,
     strengths, weaknesses } = competitor;
+  const link = websiteUrl(website);
 
   return (
     <TableRow data-testid={`competitor-row-${id}`}>
       <TableCell>
-        <a
-          href={website}
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label={`${name} website`}
-          data-testid={`competitor-link-${id}`}
-        >
-          {name}
-        </a>
+        {link ? (
+          <a
+            href={link}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={`${name} website`}
+            data-testid={`competitor-link-${id}`}
+          >
+            {name}
+          </a>
+        ) : (
+          <span data-testid={`competitor-name-${id}`}>{name}</span>
+        )}
       </TableCell>
       <TableCell>
         <Chip label={stage} size="small"

@@ -30,7 +30,7 @@ export async function reauthViaCookie(
 ): Promise<boolean> {
   const rr = await rawBaseQuery(
     {
-      url: '/auth/sso-session',
+      url: '/api/auth/sso-session',
       method: 'GET',
       credentials:
         'include' as RequestCredentials,
