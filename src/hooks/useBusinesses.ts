@@ -29,13 +29,13 @@ export function useBusinesses() {
   const [renameMut] = useRenameBusinessMutation();
   const [deleteMut] = useDeleteBusinessMutation();
 
-  const main = businesses.find((b) => b.isDefault);
-  // A stored id that no longer exists (deleted elsewhere) means: main.
+  // No stored id, or one that no longer exists (deleted elsewhere),
+  // means the oldest business: what the server opens without an id.
   const active: Business | undefined =
-    businesses.find((b) => b.id === activeId) ?? main;
+    businesses.find((b) => b.id === activeId) ?? businesses[0];
 
   const open = useCallback(
-    (b: Business) => dispatch(switchBusiness(b.isDefault ? null : b.id)),
+    (b: Business) => dispatch(switchBusiness(b.id)),
     [dispatch],
   );
   const create = useCallback(

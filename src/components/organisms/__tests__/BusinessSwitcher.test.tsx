@@ -18,14 +18,14 @@ jest.mock('@/hooks/useBusinesses', () => ({
 
 import { BusinessSwitcher } from '../BusinessSwitcher';
 
-const main = { id: 'm', name: 'My business', isDefault: true, createdAt: '' };
-const second = { id: 's', name: 'Acme', isDefault: false, createdAt: '' };
+const first = { id: 'm', name: 'My business', createdAt: '' };
+const second = { id: 's', name: 'Acme', createdAt: '' };
 
 beforeEach(() => {
   jest.clearAllMocks();
   create.mockResolvedValue(second);
   vmState = {
-    businesses: [main, second], active: main, isLoading: false,
+    businesses: [first, second], active: first, isLoading: false,
     open, create, rename, remove,
   };
 });
@@ -57,15 +57,15 @@ describe('BusinessSwitcher', () => {
     await waitFor(() => expect(create).toHaveBeenCalledWith('Acme'));
   });
 
-  it('asks before deleting; never for the main business', async () => {
+  it('asks before deleting, and any business can be deleted', async () => {
     render(<BusinessSwitcher />);
     fireEvent.click(screen.getByTestId('business-switcher'));
     fireEvent.click(screen.getByTestId('business-manage'));
-    expect(screen.getAllByText('delete')).toHaveLength(1);
-    fireEvent.click(screen.getByText('delete'));
+    expect(screen.getAllByText('delete')).toHaveLength(2);
+    fireEvent.click(screen.getAllByText('delete')[0]);
     expect(remove).not.toHaveBeenCalled();
     fireEvent.click(screen.getByTestId('business-delete-confirm'));
-    await waitFor(() => expect(remove).toHaveBeenCalledWith(second));
+    await waitFor(() => expect(remove).toHaveBeenCalledWith(first));
   });
 
   it('renders nothing until the list has loaded', () => {

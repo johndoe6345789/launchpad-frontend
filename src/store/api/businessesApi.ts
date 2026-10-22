@@ -8,8 +8,6 @@ import { baseApi } from './baseApi';
 export interface Business {
   id: string;
   name: string;
-  /** The main business: it cannot be deleted. */
-  isDefault: boolean;
   createdAt: string;
 }
 

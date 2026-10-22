@@ -1,6 +1,6 @@
 /**
  * Which of the person's businesses is open. Every planning request carries
- * it (X-Business-Id); `null` means the main business. The startup-stage
+ * it (X-Business-Id); `null` means the oldest business. The startup-stage
  * choice (a per-device setting) is remembered per business here so that
  * switching back finds it again.
  * @module store/slices/businessSlice
@@ -9,7 +9,7 @@ import { createSlice, type PayloadAction } from '@reduxjs/toolkit';
 import type { StartupTypeState } from './startupTypeSlice.types';
 
 export interface BusinessState {
-  /** Open business id, or null for the main business. */
+  /** Open business id, or null for the oldest business. */
   activeId: string | null;
   /** Saved startup-stage state of businesses not currently open. */
   startupByBusiness: Record<string, StartupTypeState>;
@@ -39,5 +39,5 @@ const businessSlice = createSlice({
 export const { setActiveBusiness, stashStartup } = businessSlice.actions;
 export default businessSlice.reducer;
 
-/** Key under which the main business's stage state is stashed. */
+/** Key under which the stage state of the id-less (oldest) business is stashed. */
 export const MAIN_KEY = 'main';
