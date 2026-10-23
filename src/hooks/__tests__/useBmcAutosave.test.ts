@@ -61,6 +61,49 @@ describe('useBmcAutosave', () => {
     expect(saveMock).toHaveBeenCalledWith(canvas2);
   });
 
+  it('saves a pending edit straight away when the page is left', () => {
+    const { result, unmount } = renderHook(() => useBmcAutosave());
+    act(() => { result.current.scheduleAutosave(CANVAS); });
+    expect(saveMock).not.toHaveBeenCalled();
+    unmount();
+    expect(saveMock).toHaveBeenCalledTimes(1);
+    expect(saveMock).toHaveBeenCalledWith(CANVAS);
+    act(() => { jest.advanceTimersByTime(2000); });
+    expect(saveMock).toHaveBeenCalledTimes(1);
+  });
+
+  it('flush() saves now and does not save twice', () => {
+    const { result } = renderHook(() => useBmcAutosave());
+    act(() => { result.current.scheduleAutosave(CANVAS); });
+    act(() => { result.current.flush(); });
+    expect(saveMock).toHaveBeenCalledTimes(1);
+    act(() => { jest.advanceTimersByTime(2000); });
+    expect(saveMock).toHaveBeenCalledTimes(1);
+  });
+
+  it('flush() with nothing pending does nothing', () => {
+    const { result } = renderHook(() => useBmcAutosave());
+    act(() => { result.current.flush(); });
+    expect(saveMock).not.toHaveBeenCalled();
+  });
+
+  it('sends a keepalive request when the page is hidden or closed', () => {
+    const fetchMock = jest.fn().mockResolvedValue({});
+    (global as unknown as { fetch: unknown }).fetch = fetchMock;
+    const { result } = renderHook(() => useBmcAutosave());
+    act(() => { result.current.scheduleAutosave(CANVAS); });
+    act(() => { window.dispatchEvent(new Event('pagehide')); });
+    expect(fetchMock).toHaveBeenCalledTimes(1);
+    const [url, init] = fetchMock.mock.calls[0];
+    expect(url).toContain('/api/market-research/bmc');
+    expect(init.method).toBe('PUT');
+    expect(init.keepalive).toBe(true);
+    expect(JSON.parse(init.body)).toEqual(CANVAS);
+    expect(saveMock).not.toHaveBeenCalled();
+    act(() => { jest.advanceTimersByTime(2000); });
+    expect(saveMock).not.toHaveBeenCalled();
+  });
+
   it('exposes isSaving as false', () => {
     const { result } = renderHook(() => useBmcAutosave());
     expect(result.current.isSaving).toBe(false);

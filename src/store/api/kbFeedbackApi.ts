@@ -34,7 +34,7 @@ export const kbFeedbackApi = baseApi.injectEndpoints({
       SubmitFeedbackArgs
     >({
       query: ({ id, helpful }) => ({
-        url: `/wiki/kb/${id}/feedback`,
+        url: `/api/wiki/kb/${id}/feedback`,
         method: 'POST',
         body: { helpful },
       }),
@@ -53,7 +53,7 @@ export const kbFeedbackApi = baseApi.injectEndpoints({
       FeedbackSummary,
       number
     >({
-      query: (id) => `/wiki/kb/${id}/feedback-summary`,
+      query: (id) => `/api/wiki/kb/${id}/feedback-summary`,
       providesTags: (_r, _e, id) => [
         { type: 'Knowledge', id },
       ],

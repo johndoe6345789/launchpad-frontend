@@ -39,7 +39,7 @@ export const baseQueryWithReauth: BaseQueryFn<
     typeof args === 'string' ? args : args.url;
   if (
     result.error?.status === 401
-    && !url.startsWith('/auth/')
+    && !url.startsWith('/api/auth/')
   ) {
     const state = api.getState() as RootState;
     const rt = state.auth.refreshToken;
@@ -47,7 +47,7 @@ export const baseQueryWithReauth: BaseQueryFn<
 
     if (rt) {
       const rr = await rawBaseQuery(
-        { url: '/auth/refresh', method: 'POST',
+        { url: '/api/auth/refresh', method: 'POST',
           body: { refreshToken: rt } },
         api, extra,
       );

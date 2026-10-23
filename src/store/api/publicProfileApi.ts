@@ -20,7 +20,7 @@ export const publicProfileApi = baseApi.injectEndpoints({
       string
     >({
       query: (username) =>
-        `/users/profile/${encodeURIComponent(username)}`,
+        `/api/users/profile/${encodeURIComponent(username)}`,
       providesTags: (_r, _e, username) => [
         { type: 'User', id: username },
       ],

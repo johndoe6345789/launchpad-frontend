@@ -20,6 +20,8 @@ export interface ResourceEntry {
   tags: string[];
 }
 
+const BASE_PATH = process.env.NEXT_PUBLIC_BASE_PATH ?? '/app';
+
 /** Props for ResourceCard. */
 export interface ResourceCardProps {
   resource: ResourceEntry;
@@ -76,7 +78,7 @@ export const ResourceCard: React.FC<
           {resource.desc}
         </Typography>
         <a
-          href={resource.downloadUrl}
+          href={`${BASE_PATH}${resource.downloadUrl}`}
           download
           aria-label={`${t('download')} ${resource.title}`}
           data-testid={`resource-download-${resource.id}`}

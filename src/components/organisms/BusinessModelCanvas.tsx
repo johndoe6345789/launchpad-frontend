@@ -85,6 +85,7 @@ export const BusinessModelCanvas: React.FC = () => {
                   [f.key]: e.target.value,
                 });
               }}
+              onBlur={() => vm.flushAutosave?.()}
               inputProps={{
                 'aria-label': t(
                   f.lk as Parameters<typeof t>[0]),

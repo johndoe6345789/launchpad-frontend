@@ -19,7 +19,7 @@ export const preferencesApi =
       getPreferences: build.query<
         UserPreferences, void
       >({
-        query: () => '/users/me/preferences',
+        query: () => '/api/users/me/preferences',
         providesTags: ['Preferences'],
       }),
 
@@ -29,7 +29,7 @@ export const preferencesApi =
         Partial<UserPreferences>
       >({
         query: (body) => ({
-          url: '/users/me/preferences',
+          url: '/api/users/me/preferences',
           method: 'PUT',
           body,
         }),

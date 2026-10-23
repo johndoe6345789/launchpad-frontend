@@ -323,7 +323,11 @@
     "testEmail": "Test Email",
     "forumBoards": "Forum Boards",
     "emailPrefsTitle": "Email Preferences",
-    "emailDripLabel": "Receive onboarding and re-engagement emails"
+    "emailDripLabel": "Receive onboarding and re-engagement emails",
+    "leaderboardTitle": "Leaderboard",
+    "leaderboardLabel": "Show me on the leaderboard",
+    "leaderboardHint": "Turn this off to leave the ranked list. Your points and badges are kept.",
+    "prefsSaveFailed": "That did not save. Please try again."
   },
   "blog": {
     "title": "Blog",
@@ -1283,7 +1287,19 @@
     "tabs": {
       "xMatrix": "X-Matrix",
       "bowling": "Bowling Chart"
-    }
+    },
+    "addObjective": "Add objective",
+    "titleLabel": "Objective",
+    "descriptionLabel": "Why it matters (optional)",
+    "horizonLabel": "Horizon",
+    "targetDateLabel": "Target date",
+    "delete": "Delete",
+    "link": "Link",
+    "pickCompany": "Link a company…",
+    "companyLabel": "Company to link",
+    "strengthLabel": "How strongly",
+    "unlink": "Remove link to {name}",
+    "noCompanies": "To link objectives to companies, add a company in the Company Registry first. You can still add and track objectives without one."
   },
   "bowling": {
     "pageTitle": "Bowling Chart",
@@ -1605,7 +1621,7 @@
           {
             "heading": "Creating one",
             "body": [
-              "Choose New business, give it a name and Create. It opens empty and ready to fill in. You can have up to 20 and names must be different (capital letters do not count)."
+              "Choose New business, give it a name and Create. It opens empty and ready to fill in. You can have as many as you like, and names must be different (capital letters do not count)."
             ]
           },
           {

@@ -15,7 +15,7 @@ export const userApi = baseApi.injectEndpoints({
   endpoints: (build) => ({
     /** Get a user profile by ID. */
     getUser: build.query<UserProfile, string>({
-      query: (id) => `/users/${id}`,
+      query: (id) => `/api/users/${id}`,
       providesTags: (_r, _e, id) => [{ type: 'User', id }],
     }),
 
@@ -25,7 +25,7 @@ export const userApi = baseApi.injectEndpoints({
       UpdateProfileRequest & { id: string }
     >({
       query: ({ id, ...body }) => ({
-        url: `/users/${id}`,
+        url: `/api/users/${id}`,
         method: 'PATCH',
         body,
       }),
@@ -34,7 +34,7 @@ export const userApi = baseApi.injectEndpoints({
 
     /** Get aggregated stats for a user. */
     getUserStats: build.query<UserStats, string>({
-      query: (id) => `/users/${id}/stats`,
+      query: (id) => `/api/users/${id}/stats`,
       providesTags: (_r, _e, id) => [{ type: 'User', id }],
     }),
 
@@ -44,14 +44,14 @@ export const userApi = baseApi.injectEndpoints({
       { page?: number; perPage?: number }
     >({
       query: ({ page = 1, perPage = 20 }) =>
-        `/users?page=${page}&per_page=${perPage}`,
+        `/api/users?page=${page}&per_page=${perPage}`,
       providesTags: ['User'],
     }),
 
     /** Search users by handle/display name. */
     searchUsers: build.query<UserProfile[], string>({
       query: (q) =>
-        `/users/search?q=${encodeURIComponent(q)}`,
+        `/api/users/search?q=${encodeURIComponent(q)}`,
       providesTags: ['User'],
     }),
   }),

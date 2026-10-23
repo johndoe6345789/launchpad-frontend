@@ -49,10 +49,10 @@ export const searchApi = baseApi.injectEndpoints({
   endpoints: (builder) => ({
     suggest: builder.query<SuggestResponse, SuggestArgs>({
       query: ({ q, limit = 5 }) =>
-        `/search/suggest?${suggestParams(q, limit)}`,
+        `/api/search/suggest?${suggestParams(q, limit)}`,
     }),
     search: builder.query<SearchResponse, SearchArgs>({
-      query: (args) => `/search?${searchParams(args)}`,
+      query: (args) => `/api/search?${searchParams(args)}`,
     }),
   }),
   overrideExisting: false,

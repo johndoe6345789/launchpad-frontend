@@ -25,7 +25,7 @@ export const baseApi = createApi({
     'Auth', 'User', 'Notification',
     'Gamification', 'Chat',
     'Dashboard', 'Features', 'Comments',
-    'Translation', 'Preferences',
+    'Translation', 'Preferences', 'AccountPrefs',
     'ApiKeys', 'SystemKeys', 'Admin',
     'Social',
     'Analytics', 'AdminAnalytics', 'Flags',

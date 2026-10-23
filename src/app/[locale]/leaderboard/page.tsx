@@ -9,10 +9,6 @@ import nextDynamic from 'next/dynamic';
 /** Skip static prerendering — data is live. */
 export const dynamic = 'force-dynamic';
 
-// Note: opt-in toggle (D3) needs
-// PATCH /api/users/me/leaderboard-opt-in
-// Not yet implemented — placeholder UI only.
-
 const LeaderboardTable = nextDynamic(
   () => import(
     '@/components/organisms/LeaderboardTable'

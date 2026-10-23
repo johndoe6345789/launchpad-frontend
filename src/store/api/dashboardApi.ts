@@ -22,7 +22,7 @@ export const dashboardApi = baseApi.injectEndpoints({
     getDashboardStats: build.query<
       DashboardStats, void
     >({
-      query: () => '/dashboard/stats',
+      query: () => '/api/dashboard/stats',
       providesTags: ['Dashboard'],
     }),
   }),
